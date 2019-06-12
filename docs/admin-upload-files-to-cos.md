@@ -1,4 +1,4 @@
-# Uploading field data to IBM Object Storage
+# Admins: how to upload field data to IBM Object Storage
 
 The following uploads zipped files to an IBM COS bucket called eg agrotech-prod-agrocustomername-onboarding.
 

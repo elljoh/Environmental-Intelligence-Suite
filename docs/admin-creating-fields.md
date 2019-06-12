@@ -1,4 +1,4 @@
-# How to create fields (admin use case)
+# Admins: how to create fields for a user
 
 The following assumes subfield geometries (eg as kml files) have been already uploaded to an IBM COS bucket called eg agrotech-prod-agrocustomername-onboarding.
 
