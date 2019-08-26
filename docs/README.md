@@ -4,8 +4,7 @@
 
 * [High Level Client On-boarding Overview](./onboarding.md)
 * [Analytics Information and Availability](./analytics.md)
-* [Interacting with Watson Decision Platform: Full Technical Guidelines(pdf doc)](./pdfs/WDP-Tech-Doc.pdf)
-
+* [Interacting with Watson Decision Platform: Full Technical Guidelines](./pdfs/WDP-Tech-Doc.pdf) _(pdf doc)_
 ## API Docs
 
 * Full API Swagger docs available here: <https://foundation.agtech.ibm.com/v2/swagger>
