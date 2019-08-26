@@ -1,6 +1,8 @@
 # Scripts
 
-## generatePolygon.py
+## generatePolygon
+
+[../scripts/generatePolygon.py](../scripts/generatePolygon.py)
 
 ### Usage
 
