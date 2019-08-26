@@ -22,7 +22,7 @@
 
 ### Python
 
-* [Generate polygons](../scripts/generatePolygon.py) - more info at [scripts readme doc](../scripts/README.md)
+* [Generate polygons](./../scripts/generatePolygon.py) - more info at [scripts readme doc](./../scripts/README.md)
 
 ## Notebooks
 

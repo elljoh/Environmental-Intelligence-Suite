@@ -2,7 +2,7 @@
 
 ## generatePolygon
 
-[../scripts/generatePolygon.py](../scripts/generatePolygon.py)
+[./../scripts/generatePolygon.py](../scripts/generatePolygon.py)
 
 ### Usage
 
