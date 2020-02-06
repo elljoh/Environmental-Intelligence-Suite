@@ -25,6 +25,7 @@
 * [How to generate auth tokens](./api-tokens.md)
 * [How admin users can create fields on behalf of regular users](./admin-creating-fields.md)
 * [How admin users can upload customer field data to IBM Cloud Object Storage](./admin-upload-files-to-cos.md)
+* [Sample Data Query for HDSM/T layer](./sample-queries/hdsmt.md)
 
 ## Scripts
 

@@ -1,6 +1,6 @@
 # HDSM/T Data Query Samples
 
-1. Get a valid auth token: [how to create tokens](https://github.com/IBM/watson-decision-platform-for-agriculture/blob/master/docs/api-tokens.md)
+1. Get a valid auth token: [how to create tokens](../api-tokens.md)
 2. Get a list of fields: `curl -X GET "https://foundation.agtech.ibm.com/v2/field" -H "accept: application/json; charset=UTF-8" -H  "Authorization: Bearer ey .. Q2"`
 </br> Sample response: `{"properties":{"name":"SampleFieldName1","deleted":false,"creationTime":"2018-09-01T15:06:04Z"},"uuid":"1110b2c9-b727-47ee-97c7-2a0b6497ba6a","type":"Feature"}`
 </br> Just get the uuid for the next query: `1110b2c9-b727-47ee-97c7-2a0b6497ba6a`
