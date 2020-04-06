@@ -18,7 +18,9 @@ This option is designed to assess the impacts of field-level crop productivity f
 
 Date Available | Crop | Applicable Geography | Description of Model
 -------------- | -------------- | -------------- | --------------
-Nov 15 2019 (API & visualization) | Barley (Winter/Spring) | Europe, Australia | Field-level crop yield forecast, spatialized to 10 meter resolution
+Apr 15 2020 (API & visualization) | Barley (Winter/Spring) | Europe, Australia | Field-level crop yield forecast, spatialized to 10 meter resolution
+Apr 15 2020 (API & visualization) | Sorghum | Australia, Brazil | Field-level crop yield forecast, spatialized to 10 meter resolution
+Nov 15 2019 (API & visualization) | Barley (Winter/Spring) | Europe, Australia | Field-level crop yield forecast, single value per field
 Aug 15 2019 (via visualization) | Corn/Maize, Soybeans, Wheat | All geos and types below
 Aug 15 2019 (via API) | Wheat (Winter/Spring) | US, Canada, Europe, Mexico | Field-level crop yield forecast, single value per field
 Jul 31 2019 (via API) | Soybeans | Brazil, Canada, Mexico | Field-level crop yield forecast, spatialized to 10 meter resolution
