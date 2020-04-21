@@ -35,4 +35,4 @@
 
 ## Notebooks
 
-* TBD
+* [Access Jupyter Notebooks to Interact with the Watson Decision Platform Layers](./notebooks/notebooks.md)
