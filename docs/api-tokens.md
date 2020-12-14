@@ -1,6 +1,6 @@
 # API Auth Tokens
 
-In order to access the APIs the user needs to generate a Bearer access token.
+In order to access Weather Operations Center APIs for asset import and registration of custom geospatial queries, the user needs to generate a Bearer access token using their WOC API key.
 
 Shell example with curl:
 
@@ -11,4 +11,4 @@ curl --request POST --url https://"token provider URL"/Auth/GetBearerForClient -
 Example output:
 ```{"access_token":"ey ..... 6Mg","expires_in":600,"token_type":"Bearer"}```
 
-IBM Tech Sales shall provide customers with the correct URL and API key to be able retrieve tokens for their organization.
+IBM Tech Sales shall provide customers with the correct token provider URL and WOC API key to be able retrieve tokens for their organization.
