@@ -2,10 +2,13 @@
 
 Weather impacts every business, every day. Minimizing the disruption that it can cause requires more than just gathering weather data — you must employ advanced analytics and intelligent workflows to reimagine processes and better predict how weather will impact your assets, employees and customers. Fair or foul, when weather strikes, The IBM Weather Operations Center is a suite of applications that provides insight so you can plan for and respond to changing conditions to ensure business continuity.
 
+This github repository contains documentation, samples and API usage examples that can be referenced when interacting with IBM Weather Operations Center. 
+
 ## Overview Docs
 
 * [Product Page](https://www.ibm.com/products/weather-operations-center)
 * [Guide](https://www.ibm.com/downloads/cas/PA6JERGA)
+* [Blog](https://www.ibm.com/blogs/internet-of-things/ibm-weather-operations-center/)
 
 
 ## API Docs
