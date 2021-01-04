@@ -6,7 +6,7 @@ IBM Weather Operations Center integrates with the IBM Maximo solutions suite to 
 
 ## Generate JWT token to access IBM Weather Operations Center Service APIs
   
-<b>Type the following request in a command-line window (PC) or a terminal (MAC) </b>: 
+<b>Substitute <API_KEY> in the following request and call it in a command-line window (PC) or a terminal (MAC) </b>: 
 
  curl --request POST --url https://auth-b2b-twc.wsitrader.com/Auth/GetBearerForClient --header 'Content-Type: application/json' --header 'cache-control: no-cache' --data '{"apiKey":"<API_KEY>", "clientId":"ibm-agro-api"}'
 
@@ -23,7 +23,7 @@ IBM Weather Operations Center integrates with the IBM Maximo solutions suite to 
 
 ### Import assets
 
-<b>Type the following request in a command-line window (PC) or a terminal (MAC) </b>: 
+<b>Substitute <JWT_TOKEN> , <Asset Collection Name> , <MAXIMO AUTH> and <MAXIMO_URL> in the following request and call it in a command-line window (PC) or a terminal (MAC) </b>: 
 
 curl -X POST -H 'Authorization: Bearer <JWT_TOKEN>' --data '{"displayName": "<Asset Collection Name>", "maxauth":"<MAXIMO AUTH>", "serviceUrl": "http://<MAXIMO_URL>/maximo/oslc/", "limit": 200}' 'https://foundation.agtech.ibm.com/v2/assetimport/source?mode=e2e' -i
 
@@ -45,7 +45,7 @@ curl -X POST -H 'Authorization: Bearer <JWT_TOKEN>' --data '{"displayName": "<As
 ### Status of the Import job
 
 
-<b>Type the following request in a command-line window (PC) or a terminal (MAC) </b>: 
+<b>Substitute <UNIQUE_ID> from the response above and your <JWT_TOKEN> in the following request and call it in a command-line window (PC) or a terminal (MAC) </b>: 
 
 
 curl -X GET "https://foundation.agtech.ibm.com/v2/assetimport/status/<UNIQUE_ID>" -H "accept: application/json" -H "Authorization: Bearer <JWT_TOKEN>"
