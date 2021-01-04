@@ -23,9 +23,9 @@ IBM Weather Operations Center integrates with the IBM Maximo solutions suite to 
 
 ### Import assets
 
-<b>Substitute <JWT_TOKEN> , <Asset Collection Name> , <MAXIMO AUTH> and <MAXIMO_URL> in the following request and call it in a command-line window (PC) or a terminal (MAC) </b>: 
+<b>Substitute <JWT_TOKEN>, <ASSET_COLLECTION_NAME>, <MAXIMO_AUTH> and <MAXIMO_URL> in the following request and call it in a command-line window (PC) or a terminal (MAC) </b>: 
 
-curl -X POST -H 'Authorization: Bearer <JWT_TOKEN>' --data '{"displayName": "<Asset Collection Name>", "maxauth":"<MAXIMO AUTH>", "serviceUrl": "http://<MAXIMO_URL>/maximo/oslc/", "limit": 200}' 'https://foundation.agtech.ibm.com/v2/assetimport/source?mode=e2e' -i
+curl -X POST -H 'Authorization: Bearer <JWT_TOKEN>' --data '{"displayName": "<ASSET_COLLECTION_NAME>", "maxauth":"<MAXIMO_AUTH>", "serviceUrl": "http://<MAXIMO_URL>/maximo/oslc/", "limit": 200}' 'https://foundation.agtech.ibm.com/v2/assetimport/source?mode=e2e' -i
 
 
 <b>Response</b>:
