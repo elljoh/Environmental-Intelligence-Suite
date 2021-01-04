@@ -2,7 +2,7 @@
 
 IBM Weather Operations Center combines the power of geospatial analytics, alerts and dashboards into a single, modernized user experience. Release 1.0 empowers our customers with basic support for visualizing results of a geospatial query and share their findings operationally through dashboard interactive map.
 
-Action: Contact your IBM representative to get your Weather Operations Center API_KEY and user credentials. 
+__Action__: Contact your IBM representative to get your Weather Operations Center API_KEY and user credentials. 
 
 ## Perform experimentation using Weather Operations Center - Geospatial Analytics Component
 
@@ -148,7 +148,7 @@ Block Added.`
 <b>Call to</b>: 
 
 
-curl --location --request POST 'https://pairs.res.ibm.com/v2/query' \
+`curl --location --request POST 'https://pairs.res.ibm.com/v2/query' \
 --header 'Content-Type: application/json' \
 --header 'Authorization: Basic KEY' \
 --data-raw '{
@@ -173,7 +173,7 @@ curl --location --request POST 'https://pairs.res.ibm.com/v2/query' \
             "type": "raster"
         } 
     ]
-}'
+}'`
 
 
 
@@ -181,10 +181,10 @@ curl --location --request POST 'https://pairs.res.ibm.com/v2/query' \
 <b>Example Response</b>:
 
 
-{
+`{
     "id": "1607533200_04577287"
 }
-
+`
 
 
 
@@ -193,9 +193,9 @@ curl --location --request POST 'https://pairs.res.ibm.com/v2/query' \
 
 <b>Merge Jobs</b>:
 
-
+`
 curl --location --request PUT 'https://pairs.res.ibm.com/v2/queryjobs/1607533200_04490762/merge/1607533200_04577287' \
---header 'Authorization: Basic KEY'
+--header 'Authorization: Basic KEY'`
 
 
 
