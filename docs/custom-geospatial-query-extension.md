@@ -2,7 +2,7 @@
 
 IBM Weather Operations Center combines the power of geospatial analytics, alerts and dashboards into a single, modernized user experience. Release 1.0 empowers our customers with basic support for visualizing results of a geospatial query and share their findings operationally through dashboard interactive map.
 
-__Action__: Contact your IBM representative to get your Weather Operations Center API_KEY and user credentials. 
+__Action__: Contact your IBM representative to get your Weather Operations Center `API_KEY` and user credentials. 
 
 ## Perform experimentation using Weather Operations Center - Geospatial Analytics Component
 
