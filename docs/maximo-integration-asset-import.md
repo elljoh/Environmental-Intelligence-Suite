@@ -77,3 +77,21 @@ Response:
   
  ![alt text](https://github.com/IBM/Weather-Operations-Center/blob/master/docs/resources/woc-maximo03.png?raw=true)
   
+ 4. Select a Maximo asset on the interactive map to view details:
+  
+ ![alt text](https://github.com/IBM/Weather-Operations-Center/blob/master/docs/resources/woc-maximo04.png?raw=true)
+  
+ 5. Turn on out-of-the-box weather layers to assess relevant attributes impacting the asset:
+  
+ ![alt text](https://github.com/IBM/Weather-Operations-Center/blob/master/docs/resources/woc-maximo05.png?raw=true)
+  
+ 6. If work order creation/modification is needed based on the assessment in step 5, go to your Maximo UI and search for the Location/Asset by the name (copied over from step 4 above):
+  
+ ![alt text](https://github.com/IBM/Weather-Operations-Center/blob/master/docs/resources/woc-maximo06.png?raw=true)
+  
+ 7. View 'Work Details' and adjust as necessary:
+  
+ ![alt text](https://github.com/IBM/Weather-Operations-Center/blob/master/docs/resources/woc-maximo07.png?raw=true)
+  
+  
+  
