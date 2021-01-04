@@ -2,11 +2,11 @@
 
 IBM Weather Operations Center combines the power of geospatial analytics, alerts and dashboards into a single, modernized user experience. Release 1.0 empowers our customers with basic support for visualizing results of a geospatial query and share their findings operationally through dashboard interactive map.
 
-
+Action: Contact your IBM representative to get your Weather Operations Center API_KEY and user credentials. 
 
 ## Perform experimentation using Weather Operations Center - Geospatial Analytics Component
 
- Tutorials on how to construct and use geospatial queries are located here - https://pairs.res.ibm.com/tutorial/tutorials/api/index.html . Contact your IBM representative to get your Geospatial Analytics API credentials. 
+ Tutorials on how to construct and use geospatial queries are located here - https://pairs.res.ibm.com/tutorial/tutorials/api/index.html
 
  Proceed to Day 0 below once your geospatial query is finalized and you would like to use it for viewing results within Dashboard Visualization component.
 
@@ -19,38 +19,38 @@ IBM Weather Operations Center combines the power of geospatial analytics, alerts
 
 ### Generate JWT token
   
-<b>Type the following request in a command-line window (PC) or a terminal (MAC) </b>: 
+<b>Substitute your API_KEY and make the following request in a command-line window (PC) or a terminal (MAC) </b>: 
 
- curl --request POST --url https://auth-b2b-twc.wsitrader.com/Auth/GetBearerForClient --header 'Content-Type: application/json' --header 'cache-control: no-cache' --data '{"apiKey":"<API_KEY>", "clientId":"ibm-agro-api"}'
+ `curl --request POST --url https://auth-b2b-twc.wsitrader.com/Auth/GetBearerForClient --header 'Content-Type: application/json' --header 'cache-control: no-cache' --data '{"apiKey":"<API_KEY>", "clientId":"ibm-agro-api"}'`
 
 <b>Response</b>: 
 
-  {"access_token":"<JWT_TOKEN>","expires_in":xxx,"token_type":"Bearer","scope":"xxxxxxx"}
+  `{"access_token":"<JWT_TOKEN>","expires_in":xxx,"token_type":"Bearer","scope":"xxxxxxx"}`
  
 <b>Action</b>:
 
-  Copy the value corresponding to <JWT_TOKEN> from the repsonse above to use in the Import API call below.
+  Copy the value corresponding to `<JWT_TOKEN>` from the repsonse above to use in the Import API call below.
  
 
 ### Registration Part # 1 - Platform metadata
 
-<b>Substitute JWT_TOKEN, your QUERY_PAYLOAD and ANALYTICS_NAME below - and make the curl request in a command-line window (PC) or a terminal (MAC) </b>: 
+<b>Substitute `JWT_TOKEN`, your `QUERY_PAYLOAD` and `ANALYTICS_NAME` below - and make the curl request in a command-line window (PC) or a terminal (MAC) </b>: 
 
-curl -X POST "https://foundation.agtech.ibm.com/v2/layer/analytics/metadata" -H "accept: application/json" -H "Authorization: Bearer <JWT_TOKEN>" -H "Content-Type: application/json; charset=UTF-8" -d "{\"pairsPayload\":\"<QUERY_PAYLOAD>\",\"analyticsName\":\"<ANALYTICS_NAME"}"
+`curl -X POST "https://foundation.agtech.ibm.com/v2/layer/analytics/metadata" -H "accept: application/json" -H "Authorization: Bearer <JWT_TOKEN>" -H "Content-Type: application/json; charset=UTF-8" -d "{\"pairsPayload\":\"<QUERY_PAYLOAD>\",\"analyticsName\":\"<ANALYTICS_NAME"}"`
 
 
 
 
 <b>Example Response</b>:
 
-
+`
 [
   {
     "analyticsUuid": "1f2d5a9e-39c5-4ca4-bebc-14ac43646960",
     "layerId": "51",
     "baseComputationId": "1607533200_04490762"
   }
-]
+]`
 
 
 
@@ -58,12 +58,12 @@ curl -X POST "https://foundation.agtech.ibm.com/v2/layer/analytics/metadata" -H 
 ### Registration Part # 2 - Visualization metadata
 
 
- Before making the sample request below, modify the <b>id</b> to be something unique, set the desired <b>displayName</b> and substitute the correct <b>data Attribute uuid</b> using the analyticsUuid value from the response above. Also, substitute JWT_TOKEN
+ Before making the sample request below, modify the <b>`id`</b> to be something unique, set the desired <b>`displayName`</b> and substitute the correct <b>`data Attribute uuid`</b> using the `analyticsUuid` value from the response above. Also, substitute JWT_TOKEN
  
  Everything else can be kept as is for an initial simplified scenario. Contact your IBM representative to discuss advanced geospatial analytics use-cases. 
 
 
-curl --location --request PUT 'https://api.wsitrader.com/api/v1/IMAP/put-layer-config-block' \
+`curl --location --request PUT 'https://api.wsitrader.com/api/v1/IMAP/put-layer-config-block' \
 --header 'Authorization: Bearer <JWT_TOKEN>' \
 --header 'Content-Type: application/json' \
 --data-raw '{VIEWERSHIP_ROLE : 'ALL', CONFIG_BLOCK: {
@@ -101,13 +101,13 @@ curl --location --request PUT 'https://api.wsitrader.com/api/v1/IMAP/put-layer-c
       extendMaximumColor: true,
       invalidDataValue: -9999
     }
-  }}'
+  }}'`
 
 
 <b>Example response</b>: 
 
-Response: 200
-Block Added.
+`Response: 200
+Block Added.`
 
 
 
