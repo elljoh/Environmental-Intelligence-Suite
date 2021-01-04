@@ -12,7 +12,7 @@ __Action__: Contact your IBM representative to get your Weather Operations Cente
 
 <b>Example query</b>: 
 
-` {\\\"spatial\\\":{\\\"type\\\":\\\"square\\\",\\\"aoi\\\":null,\\\"coordinates\\\":[38,-122,39,-121]},\\\"temporal\\\":{\\\"intervals\\\":[{\\\"start\\\":\\\"2020-08-01\\\",\\\"end\\\":\\\"2020-08-31\\\"}]},\\\"layers\\\":[{\\\"id\\\":\\\"51\\\",\\\"type\\\":\\\"raster\\\"}]}`
+`` {\\\"spatial\\\":{\\\"type\\\":\\\"square\\\",\\\"aoi\\\":null,\\\"coordinates\\\":[38,-122,39,-121]},\\\"temporal\\\":{\\\"intervals\\\":[{\\\"start\\\":\\\"2020-08-01\\\",\\\"end\\\":\\\"2020-08-31\\\"}]},\\\"layers\\\":[{\\\"id\\\":\\\"51\\\",\\\"type\\\":\\\"raster\\\"}]}``
 
 
 ## Day 0: Register Analytics for visualization in Weather Operations Center - Dashboard Visualization Component 
