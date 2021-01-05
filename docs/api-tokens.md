@@ -13,4 +13,4 @@ Example output:
 ```{"access_token":"ey ..... 6Mg","expires_in":600,"token_type":"Bearer"}```
 
 
-Please reach out to your IBM representative for `token provider URL` and `apiKey`.
+__Please reach out to your IBM representative for `token provider URL` and `apiKey`.__
