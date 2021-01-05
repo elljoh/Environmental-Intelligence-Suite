@@ -9,6 +9,7 @@ curl --request POST --url https://"token provider URL"/Auth/GetBearerForClient -
 ```
 
 Example output:
+
 ```{"access_token":"ey ..... 6Mg","expires_in":600,"token_type":"Bearer"}```
 
-IBM Tech Sales shall provide customers with the correct token provider URL and WOC API key to be able retrieve tokens for their organization.
+Please reach out to your IBM representative for `token provider URL` and `apiKey`.
