@@ -11,8 +11,6 @@ This github repository contains documentation, samples and API usage examples th
 * [Blog](https://www.ibm.com/blogs/internet-of-things/ibm-weather-operations-center/)
 
 
-## API Docs
-
 ## API usage examples and Scripts
 
 ### Shell/Curl Examples
