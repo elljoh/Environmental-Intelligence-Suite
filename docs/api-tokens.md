@@ -1,6 +1,6 @@
 # API Auth Tokens
 
-In order to programatically access Weather Operations Center (WOC) APIs for asset import and registration of custom geospatial queries, users need to generate a JWT access tokens using their `apiKey`.
+In order to programatically access Weather Operations Center (WOC) APIs for asset import and registration of custom geospatial queries, users need to generate JWT access tokens using their `apiKey`.
 
 Shell example with curl:
 
