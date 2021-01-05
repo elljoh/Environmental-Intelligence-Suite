@@ -10,6 +10,9 @@ This github repository contains documentation, samples and API usage examples th
 * [Guide](https://www.ibm.com/downloads/cas/PA6JERGA)
 * [Blog](https://www.ibm.com/blogs/internet-of-things/ibm-weather-operations-center/)
 
+## Landing Page
+
+* [weatheroperationscenter.ibm.com](https://weatheroperationscenter.ibm.com)
 
 ## API usage examples and Scripts
 
