@@ -21,7 +21,7 @@ IBM Weather Operations Center integrates with the IBM Maximo solutions suite to 
 ## Import assets from Maximo
 
 
-### One-shot Import job
+### Trigger One-shot Import job
 
 <b>Substitute `<JWT_TOKEN>`, `<ASSET_COLLECTION_NAME>`, `<MAXIMO_AUTH>` and `<MAXIMO_URL>` in the following request and call it in a command-line window (PC) or a terminal (MAC) </b>: 
 
