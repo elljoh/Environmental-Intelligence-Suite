@@ -139,10 +139,10 @@ Block Added.`
 
 
 
-## Day 1 and beyond: Subsequent query runs
+## Day 1 and beyond
 
 
-### During Day 1, the query date range could change (for instance) to 2020-09-01 to 2020-09-30
+### For a subsequent query run, the query date range could change (for instance) to 2020-09-01 to 2020-09-30
 
 
 <b>Call to</b>: 
@@ -199,7 +199,7 @@ curl --location --request PUT 'https://pairs.res.ibm.com/v2/queryjobs/1607533200
 
 
 
-After merging the jobs above, the output in Dashboard Visualization component would reflect computation from Sept 2020 (Day 1) rather than the original one from Aug 2020 (Day 0).
+As a consequence of the above operation, the output in Dashboard Visualization component would reflect computation from Sept 2020 (Day 1) rather than the original one from Aug 2020 (Day 0).
 
 
 Navigate to Weather Operations Center and verify that the query results reflect computational change due to temporal movement from Day 0 to Day 1.
