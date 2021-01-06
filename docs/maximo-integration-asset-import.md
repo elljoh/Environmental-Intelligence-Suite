@@ -18,10 +18,10 @@ IBM Weather Operations Center integrates with the IBM Maximo solutions suite to 
 
   Copy the value corresponding to `<JWT_TOKEN>` from the repsonse above to use in the Import API call below.
  
-## Import new assets using e2e mode
+## Import new assets from Maximo
 
 
-### Import assets
+### Kick-off Import process
 
 <b>Substitute `<JWT_TOKEN>`, `<ASSET_COLLECTION_NAME>`, `<MAXIMO_AUTH>` and `<MAXIMO_URL>` in the following request and call it in a command-line window (PC) or a terminal (MAC) </b>: 
 
