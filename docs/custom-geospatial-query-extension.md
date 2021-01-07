@@ -16,6 +16,8 @@ __Action__: Contact your IBM representative to get your Weather Operations Cente
  
  Look for an address, draw a polygo or look for an area of interest (like "Austin Texas" or "New South Wales"). Select relevant layers, etc and perform experimental queries.
  
+ ![alt text](https://github.com/IBM/Weather-Operations-Center/blob/master/docs/resources/woc-geospatial-03.png?raw=true)
+ 
  ### Data Science Experiments
  
  Optionally, create a new project in a data science environment (e.g, IBM Watson Studio), import your business assets, paste in one (or more) of the experimental queries from prior step and do further experiments as necessary until you're comfortable with the final query referencing relevant layers, time intervals, etc. 
@@ -145,7 +147,7 @@ Block Added.`
 
 4. Visualize and interact with the query results:
 
-![alt text](https://github.com/IBM/Weather-Operations-Center/blob/master/docs/resources/woc-geospatial-05.png?raw=true)
+![alt text](https://github.com/IBM/Weather-Operations-Center/blob/master/docs/resources/woc-mx-asset-geospatial-05.png?raw=true)
 
 
 
