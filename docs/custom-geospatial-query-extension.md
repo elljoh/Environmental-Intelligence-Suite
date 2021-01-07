@@ -4,11 +4,23 @@ IBM Weather Operations Center combines the power of geospatial analytics, alerts
 
 __Action__: Contact your IBM representative to get your Weather Operations Center `API_KEY` and Geospatial Analytics user credentials. 
 
-## Perform experimentation using Weather Operations Center - Geospatial Analytics Component
+## Perform Data Exploration and Experimentation using Weather Operations Center - Geospatial Analytics Component
 
  Tutorials on how to construct and use geospatial queries are located here - https://pairs.res.ibm.com/tutorial/tutorials/api/index.html
+ 
+ ### Identify Datasets
+ 
+ Log into IBM Weather Operations Center, navigate to Geospatial Analytics and use Data Explorer to search for relevant datasets.
+ 
+ ### Areas of Interest 
+ 
+ Look for an address, draw a polygo or look for an area of interest (like "Austin Texas" or "New South Wales"). Select relevant layers, etc and perform experimental queries.
+ 
+ ### Data Science Experiments
+ 
+ Optionally, create a new project in a data science environment (e.g, IBM Watson Studio), import your business assets, paste in one (or more) of the experimental queries from prior step and do further experiments as necessary until you're comfortable with the final query referencing relevant layers, time intervals, etc. 
 
- Proceed to Day 0 below once your geospatial query is finalized and you would like to use it for viewing results within Dashboard Visualization component.
+Proceed to Day 0 below once your geospatial query is finalized and you would like to operationalize it for viewing results within Dashboard Visualization component.
 
 <b>Example query</b>: 
 
