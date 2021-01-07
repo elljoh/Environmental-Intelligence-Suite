@@ -14,7 +14,7 @@ __Action__: Contact your IBM representative to get your Weather Operations Cente
  
  ### Areas of Interest 
  
- Look for an address, draw a polygo or look for an area of interest (like "Austin Texas" or "New South Wales"). Select relevant layers, etc and perform experimental queries.
+ Draw a point/polygon, or look for an area of interest (like "Austin Texas" or "New South Wales"). Select relevant layers, etc and perform experimental queries.
  
  ![alt text](https://github.com/IBM/Weather-Operations-Center/blob/master/docs/resources/woc-geospatial-03.png?raw=true)
  
