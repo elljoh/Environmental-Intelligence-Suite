@@ -22,7 +22,7 @@ __Action__: Contact your IBM representative to get your Weather Operations Cente
 
 Proceed to Day 0 below once your geospatial query is finalized and you would like to operationalize it for viewing results within Dashboard Visualization component.
 
-<b>Example query</b>: 
+<b>Example geospatial query that is ready to be operationalized </b>: 
 
 `` {\\\"spatial\\\":{\\\"type\\\":\\\"square\\\",\\\"aoi\\\":null,\\\"coordinates\\\":[38,-122,39,-121]},\\\"temporal\\\":{\\\"intervals\\\":[{\\\"start\\\":\\\"2020-08-01\\\",\\\"end\\\":\\\"2020-08-31\\\"}]},\\\"layers\\\":[{\\\"id\\\":\\\"51\\\",\\\"type\\\":\\\"raster\\\"}]}``
 
