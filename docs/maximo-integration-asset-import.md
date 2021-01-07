@@ -16,7 +16,7 @@ IBM Weather Operations Center integrates with the IBM Maximo solutions suite to 
  
 <b>Action</b>:
 
-  Copy the value corresponding to `<JWT_TOKEN>` from the repsonse above to use in the Import API call below.
+  Copy the value corresponding to `<JWT_TOKEN>` from the repsonse above to use in the Import API call below. This token would expire within the expiration window indicated by 'expires_in', following which you can repeat the JWT generation call above to get a refreshed token. 
  
 ## Import assets from Maximo
 
