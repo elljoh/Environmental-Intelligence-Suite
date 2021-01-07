@@ -10,7 +10,7 @@ __Action__: Contact your IBM representative to get your Weather Operations Cente
  
  ### Identify Datasets
  
- Log into IBM Weather Operations Center, navigate to Geospatial Analytics and use Data Explorer to search for relevant datasets.
+ Log into IBM Weather Operations Center (weatheroperationscenter.ibm.com), navigate to Geospatial Analytics using left-nav menu and use Data Explorer to search for relevant datasets.
  
  ### Areas of Interest 
  
