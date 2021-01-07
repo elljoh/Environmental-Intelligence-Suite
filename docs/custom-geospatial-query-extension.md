@@ -147,7 +147,7 @@ Block Added.`
 
 4. Visualize and interact with the query results:
 
-![alt text](https://github.com/IBM/Weather-Operations-Center/blob/master/docs/resources/woc-mx-asset-geospatial-05.png?raw=true)
+![alt text](https://github.com/IBM/Weather-Operations-Center/blob/master/docs/resources/woc-geospatial-07.png?raw=true)
 
 
 
