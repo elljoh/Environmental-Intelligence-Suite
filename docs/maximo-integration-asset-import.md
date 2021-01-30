@@ -15,7 +15,7 @@ IBM Weather Operations Center integrates with the IBM Maximo solutions suite to 
 <b>Response</b>: 
 
   ``` json
-  {"access_token":"<JWT_TOKEN>","expires_in":xxx,"token_type":"Bearer","scope":"xxxxxxx"}
+  {"access_token":"<JWT_TOKEN>","expires_in":xxxxxxx,"token_type":"Bearer","scope":"xxxxxxx"}
   ```
  
 <b>Action</b>:
