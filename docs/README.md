@@ -16,10 +16,6 @@ This github repository contains documentation and API usage examples that can be
 
 ## API usage examples and Scripts
 
-### Shell/Curl Examples
-
-* [How to generate auth tokens](./api-tokens.md)
-
 ### Maximo Asset Import
 
 * [Importing Maximo Locations into Weather Operations Center](./maximo-integration-asset-import.md)
