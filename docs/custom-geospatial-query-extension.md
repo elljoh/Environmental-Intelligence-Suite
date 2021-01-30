@@ -40,7 +40,7 @@ Get an access token:
 
 ### Registration Part # 1 - Platform metadata
 
-<a id="user-content-access-jwt-ex1" href="#access-jwt-ex1"></a><b>Substitute `ACCESS_JWT`, your `QUERY_PAYLOAD` and `ANALYTICS_NAME` below - and make the curl request in a command-line window (PC) or a terminal (MAC) </b>:
+<a id="user-content-access-jwt-ex1" href="#access-jwt-ex1"></a><b>Substitute `ACCESS_JWT`, your `QUERY_PAYLOAD` and `ANALYTICS_NAME` below - and make the curl request in a terminal window : </b>:
 
 ``` shell
 curl -X POST "https://foundation.agtech.ibm.com/v2/layer/analytics/metadata" \
