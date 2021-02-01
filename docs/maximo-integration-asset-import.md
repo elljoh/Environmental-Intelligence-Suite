@@ -96,7 +96,7 @@ Response:
   
  ![alt text](https://github.com/IBM/Weather-Operations-Center/blob/master/docs/resources/woc-maximo05.png?raw=true)
   
- 6. If work order creation/modification is needed based on the assessment in step 5, go to your Maximo UI and search for the Location/Asset by the name (copied over from step 4 above):
+ 6. If work order creation/modification is needed based on the assessment in step 5, click on the link within the popup display in order to go directly to the Location within Maximo or search for the Location by the name within your Maximo UI (copied over from step 4 above):
   
  ![alt text](https://github.com/IBM/Weather-Operations-Center/blob/master/docs/resources/woc-maximo06.png?raw=true)
   
