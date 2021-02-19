@@ -26,8 +26,24 @@ Proceed to Day 0 below once your geospatial query is finalized and you would lik
 
 <b>Example geospatial query that is ready to be operationalized </b>:
 
-```
-{\"spatial\":{\"type\":\"square\",\"aoi\":null,\"coordinates\":[38,-122,39,-121]},\"temporal\":{\"intervals\":[{\"start\":\"2020-08-01\",\"end\":\"2020-08-31\"}]},\"layers\":[{\"id\":\"51\",\"type\":\"raster\"}]}
+``` shell
+{
+ "spatial": {
+    "type":"square",
+    "aoi":null,
+    "coordinates":[38,-122,39,-121]
+  },
+ "temporal":{
+   "intervals":[{
+     "start":"2020-08-01",
+     "end":"2020-08-31"
+     }]
+  },
+ "layers":[{
+    "id":"51",
+    "type":"raster"
+  }]
+ }
 ```
 
 ## Day 0: Register Analytics for visualization in Weather Operations Center - Dashboard Visualization Component
