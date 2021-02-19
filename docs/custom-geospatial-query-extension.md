@@ -20,9 +20,11 @@ __Action__: Contact your IBM representative to get your Weather Operations Cente
 
  ### Data Science Experiments
 
- Optionally, create a new project in a data science environment (e.g, IBM Watson Studio), import your business assets, paste in one (or more) of the experimental queries from prior step and do further experiments as necessary until you're comfortable with the final query referencing relevant layers, time intervals, etc.
-
-Proceed to Day 0 below once your geospatial query is finalized and you would like to operationalize it for viewing results within Dashboard Visualization component.
+ Create a new project in a data science environment (e.g, IBM Watson Studio), import your business assets and optionally, use one (or more) of the experimental queries from prior step to bring in data from PAIRS into your notebook. Do further experiments, feature selection, model construction/training, execution and persist output of model execution into a PAIRS data layer. 
+ 
+### Visualization of data from WOC Geospatial Component (PAIRS) into WOC
+ 
+ Once you have identified a specific layer in PAIRS that has the data for the time-interval of your interest, form a query similar to the example shown below, specifying your own `spatial:coordinates`, `temporal:intervals` and `layers:id`.  Subsequently, proceed to Day 0 below to operationalize it for viewing within Dashboard Visualization component of WOC.
 
 <b>Example geospatial query that is ready to be operationalized </b>:
 
