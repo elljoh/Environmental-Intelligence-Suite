@@ -81,9 +81,9 @@ curl -X POST "https://foundation.agtech.ibm.com/v2/layer/analytics/metadata" \
 ### Registration Part # 2 - Visualization metadata
 
 
- Before making the sample request below, modify the <b>`id`</b> to be something unique, set the desired <b>`displayName`</b> and substitute the correct <b>`data Attribute uuid`</b> using the `analyticsUuid` value from the response above. <a id="user-content-access-jwt-ex2" href="#access-jwt-ex2"></a>Also, substitute ACCESS_JWT
+ Before making the sample request below, modify the <b>`id`</b> to be something unique, set the desired <b>`displayName`</b> and substitute the correct <b>`dataAttributes:uuid`</b> using the `analyticsUuid` value from the response above. <a id="user-content-access-jwt-ex2" href="#access-jwt-ex2"></a>Also, substitute ACCESS_JWT
 
- Everything else can be kept as is for an initial simplified scenario. Contact your IBM representative to discuss advanced geospatial analytics use-cases.
+ Adjust `styleProperties:palette` and `unit` as appropriate. Contact your IBM representative or Expert Labs to discuss adjusting additional properties relevant to your specific geospatial analytics use-case.
 
 
 ``` shell
