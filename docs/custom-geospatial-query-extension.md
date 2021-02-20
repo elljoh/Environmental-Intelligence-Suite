@@ -138,7 +138,7 @@ Block Added.`
 
 
 
-## Navigate to Weather Operations Center to verify the query results
+## Navigate to Weather Operations Center to verify the result
 
 1. Login to Weather Operations Center with your username and password by launching http://weatheroperationscenter.ibm.com - and navigate to Dashboard Visualization -> Interactive Map
 
@@ -163,7 +163,7 @@ Block Added.`
 ## Day 1 and beyond
 
 
-### For a subsequent query run, the query date range could change (for instance) to 2020-09-01 to 2020-09-30
+### For a subsequent query run, the query temporal interval could change (for instance to 2020-09-01 to 2020-09-30)
 
 
 <b>Call to</b>:
