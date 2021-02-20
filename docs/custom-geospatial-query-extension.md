@@ -138,7 +138,7 @@ Block Added.`
 
 
 
-## Navigate to Weather Operations Center to verify the result
+## Navigate to Weather Operations Center - Dashboard Visualization 
 
 1. Login to Weather Operations Center with your username and password by launching http://weatheroperationscenter.ibm.com - and navigate to Dashboard Visualization -> Interactive Map
 
