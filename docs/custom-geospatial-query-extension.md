@@ -18,7 +18,7 @@ __Action__: Contact your IBM representative to get your Weather Operations Cente
 
  ### Data Science Experiments
 
- Create a new project in a data science environment (e.g, IBM Watson Studio), import your business assets and optionally, use one (or more) of the experimental queries from prior step to bring in data from PAIRS into your notebook. Do further experiments, feature selection, model construction/training, execution and persist output of model execution into a PAIRS data layer. Tutorials on how to construct and use geospatial queries are located here - https://pairs.res.ibm.com/tutorial/tutorials/api/index.html
+ Optionally, create a new project in a data science environment (e.g, IBM Watson Studio), import your business assets and optionally, use one (or more) of the experimental queries from prior step to bring in data from PAIRS into your notebook. Do further experiments, feature selection, model construction/training, execution and persist output of model execution into a PAIRS data layer. Tutorials on how to construct and use geospatial queries are located here - https://pairs.res.ibm.com/tutorial/tutorials/api/index.html
  
 ### Visualization of data from WOC Geospatial Component (PAIRS) into WOC
  
