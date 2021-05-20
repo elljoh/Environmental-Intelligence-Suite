@@ -14,9 +14,7 @@ This github repository contains documentation and API usage examples that can be
 
 * [weatheroperationscenter.ibm.com](https://weatheroperationscenter.ibm.com)
 
-## API usage examples and Scripts
-
-### Maximo Asset Import
+### Maximo Integration
 
 * [Importing Maximo Locations into Weather Operations Center](./maximo-integration-asset-import.md)
 
@@ -24,11 +22,11 @@ This github repository contains documentation and API usage examples that can be
 
 * [Performing Custom Geospatial Queries, Registration and Visualization](./custom-geospatial-query-extension.md)
 
-### Vegetation Management Add-on Specific Artifacts
+### Vegetation Management Add-on
 
 * [Product Page](https://www.ibm.com/products/vegetation-management)
 
-### Agriculture Add-on Specific Artifacts
+### Agriculture Add-on
 * [Product Page](https://www.ibm.com/products/agriculture)
 * [How admin users can create fields on behalf of regular users](./admin-creating-fields.md)
 * [How admin users can upload customer field data to IBM Cloud Object Storage](./admin-upload-files-to-cos.md)
