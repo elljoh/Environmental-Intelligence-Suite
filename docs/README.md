@@ -24,7 +24,12 @@ This github repository contains documentation and API usage examples that can be
 
 * [Performing Custom Geospatial Queries, Registration and Visualization](./custom-geospatial-query-extension.md)
 
-### Agriculture Add-on Specific Examples and Samples
+### Vegetation Management Add-on Specific Artifacts
+
+* [Product Page](https://www.ibm.com/products/vegetation-management)
+
+### Agriculture Add-on Specific Artifacts
+* [Product Page](https://www.ibm.com/products/agriculture)
 * [How admin users can create fields on behalf of regular users](./admin-creating-fields.md)
 * [How admin users can upload customer field data to IBM Cloud Object Storage](./admin-upload-files-to-cos.md)
 * [Sample Data Query for HDSM/T layer](./sample-queries/hdsmt.md)
