@@ -22,7 +22,7 @@ __Action__: Contact your IBM representative to get your IBM Environmental Intell
  
 ### Visualization of data from EIS Geospatial Component (PAIRS)
  
- Once you have identified a specific layer in PAIRS that has the data for the time-interval of your interest, form a query similar to the example shown below, specifying your own `spatial:coordinates`, `temporal:intervals` and `layers:id`.  Subsequently, proceed to Day 0 below to operationalize it for viewing within Dashboard Visualization component of WOC.
+ Once you have identified a specific layer in PAIRS that has the data for the time-interval of your interest, form a query similar to the example shown below, specifying your own `spatial:coordinates`, `temporal:intervals` and `layers:id`.  Subsequently, proceed to Day 0 below to operationalize it for viewing within Dashboard Visualization component of EIS.
 
 <b>Example geospatial `QUERY_PAYLOAD` that is ready to be operationalized </b>:
 
