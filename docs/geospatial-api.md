@@ -11,7 +11,6 @@ Authorization: Bearer xxxxxxxx
 ```
 
 Geospatial Analytics uses the IBM Environmental Intelligence Suite authorization server to provide API access.
-
 The Environmental Intelligence Suite authorization server implements standard OAuth 2.0 and OpenId Connect 1.0 protocols.
 
 Authorization server endpoints are located at the base Uri:
