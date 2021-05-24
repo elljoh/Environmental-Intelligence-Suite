@@ -20,7 +20,7 @@ __Action__: Contact your IBM representative to get your IBM Environmental Intell
 
  Optionally, create a new project in a data science environment (e.g, IBM Watson Studio), import your business assets and optionally, use one (or more) of the experimental queries from prior step to bring in data from PAIRS into your notebook. Do further experiments, feature selection, model construction/training, execution and persist output of model execution into a PAIRS data layer. Tutorials on how to construct and use geospatial queries are located here - https://pairs.res.ibm.com/tutorial/tutorials/api/index.html
  
-### Visualization of data from WOC Geospatial Component (PAIRS) into WOC
+### Visualization of data from EIS Geospatial Component (PAIRS) into EI
  
  Once you have identified a specific layer in PAIRS that has the data for the time-interval of your interest, form a query similar to the example shown below, specifying your own `spatial:coordinates`, `temporal:intervals` and `layers:id`.  Subsequently, proceed to Day 0 below to operationalize it for viewing within Dashboard Visualization component of WOC.
 
@@ -46,7 +46,7 @@ __Action__: Contact your IBM representative to get your IBM Environmental Intell
  }
 ```
 
-## Day 0: Register Analytics for visualization in Weather Operations Center - Dashboard Visualization Component
+## Day 0: Register Analytics for visualization in Environmental Intelligence Suite - Dashboard Visualization Component
 
 ### Generate JWT token
 
@@ -216,4 +216,4 @@ curl --location --request PUT 'https://pairs.res.ibm.com/v2/queryjobs/1607533200
 
 As a consequence of the above operation, the output in Dashboard Visualization component would reflect computation from Sept 2020 (Day 1) rather than the original one from Aug 2020 (Day 0).
 
-Navigate to Weather Operations Center and verify that the query results reflect computational change due to temporal movement from Day 0 to Day 1.
+Navigate to Environmental Intelligence Suite and verify that the query results reflect computational change due to temporal movement from Day 0 to Day 1.
