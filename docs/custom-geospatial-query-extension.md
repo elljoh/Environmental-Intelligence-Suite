@@ -20,7 +20,7 @@ __Action__: Contact your IBM representative to get your IBM Environmental Intell
 
  Optionally, create a new project in a data science environment (e.g, IBM Watson Studio), import your business assets and optionally, use one (or more) of the experimental queries from prior step to bring in data from PAIRS into your notebook. Do further experiments, feature selection, model construction/training, execution and persist output of model execution into a PAIRS data layer. Tutorials on how to construct and use geospatial queries are located here - https://pairs.res.ibm.com/tutorial/tutorials/api/index.html
  
-### Visualization of data from EIS Geospatial Component (PAIRS) into EI
+### Visualization of data from EIS Geospatial Component (PAIRS)
  
  Once you have identified a specific layer in PAIRS that has the data for the time-interval of your interest, form a query similar to the example shown below, specifying your own `spatial:coordinates`, `temporal:intervals` and `layers:id`.  Subsequently, proceed to Day 0 below to operationalize it for viewing within Dashboard Visualization component of WOC.
 
@@ -138,7 +138,7 @@ Block Added.`
 
 
 
-## Navigate to Weather Operations Center - Dashboard Visualization 
+## Navigate to IBM Environmental Intelligence Suite - Dashboard Visualization 
 
 1. Login to Weather Operations Center with your username and password by launching http://weatheroperationscenter.ibm.com - and navigate to Dashboard Visualization -> Interactive Map
 
