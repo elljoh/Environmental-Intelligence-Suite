@@ -72,11 +72,11 @@ Response:
 ```
 
 
-## Verify assets have been loaded into Weather Operations Center
+## Verify assets have been loaded into IBM Environmental Intelligence Suite
 
 
 
- 1. Login to Weather Operations Center with your username and password by launching http://weatheroperationscenter.ibm.com - and navigate to Dashboard Visualization -> Interactive Map:
+ 1. Login to IBM Environmental Intelligence Suite with your username and password by launching http://weatheroperationscenter.ibm.com - and navigate to Dashboard Visualization -> Interactive Map:
  
 ![alt text](https://github.com/IBM/Weather-Operations-Center/blob/master/docs/resources/woc-maximo01.png?raw=true)
 
