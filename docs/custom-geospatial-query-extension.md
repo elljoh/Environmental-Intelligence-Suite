@@ -1,14 +1,14 @@
-## IBM Weather Operations Center extension for Custom Geospatial Queries </h1>
+## IBM Environmental Intelligence Suite extension for Custom Geospatial Queries </h1>
 
-IBM Weather Operations Center combines the power of geospatial analytics, alerts and dashboards into a single, modernized user experience. Release 1.0 empowers our customers with basic support for visualizing results of a geospatial query and share their findings operationally through dashboard interactive map.
+IBM Environmental Intelligence Suite combines the power of geospatial analytics, alerts and dashboards into a single, modernized user experience. Release 1.0 empowers our customers with basic support for visualizing results of a geospatial query and share their findings operationally through dashboard interactive map.
 
-__Action__: Contact your IBM representative to get your Weather Operations Center `API_KEY` and `username | password`.
+__Action__: Contact your IBM representative to get your IBM Environmental Intelligence Suite `API_KEY` and `username | password`.
 
-## Perform Data Exploration and Experimentation using Weather Operations Center - Geospatial Analytics Component
+## Perform Data Exploration and Experimentation using IBM Environmental Intelligence Suite - Geospatial Analytics Component
 
  ### Identify Datasets
 
- Log into IBM Weather Operations Center (weatheroperationscenter.ibm.com), navigate to Geospatial Analytics using left-nav menu and use Data Explorer to search for relevant datasets.
+ Log into IBM Environmental Intelligence Suite (weatheroperationscenter.ibm.com), navigate to Geospatial Analytics using left-nav menu and use Data Explorer to search for relevant datasets.
 
  ### Areas of Interest
 
