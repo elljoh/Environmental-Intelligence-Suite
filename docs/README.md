@@ -1,8 +1,8 @@
-# IBM Weather Operations Center
+# IBM Environmental Intelligence Suite
 
-Weather and other geospatial data impacts every business, every day. Minimizing the disruption that it can cause requires more than just gathering data — you must employ advanced analytics and intelligent workflows to reimagine processes and better predict how the environment will impact your assets, employees and customers. Fair or foul, when weather strikes, The IBM Weather Operations Center is a suite of applications that provides insight so you can plan for and respond to changing conditions to ensure business continuity.
+Weather and other geospatial data impacts every business, every day. Minimizing the disruption that it can cause requires more than just gathering data — you must employ advanced analytics and intelligent workflows to reimagine processes and better predict how the environment will impact your assets, employees and customers. Fair or foul, when weather strikes, The IBM Environmental Intelligence Suite is a suite of applications that provides insight so you can plan for and respond to changing conditions to ensure business continuity.
 
-This github repository contains documentation and API usage examples that can be referenced when interacting with IBM Weather Operations Center.
+This github repository contains documentation and API usage examples that can be referenced when interacting with Environmental Intelligence Suite.
 
 ## Overview Docs
 
@@ -16,7 +16,7 @@ This github repository contains documentation and API usage examples that can be
 
 ### Maximo Integration
 
-* [Importing Maximo Locations into Weather Operations Center](./maximo-integration-asset-import.md)
+* [Importing Maximo Locations into Environmental Intelligence Suite](./maximo-integration-asset-import.md)
 
 ### Custom Geospatial Queries
 
