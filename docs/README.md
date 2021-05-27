@@ -6,13 +6,9 @@ This github repository contains documentation and API usage examples that can be
 
 ## Overview Docs
 
-* [Product Page](https://www.ibm.com/products/weather-operations-center)
+* [Product Page](https://www.ibm.com/products/environmental-intelligence-suite)
 * [Guide](https://www.ibm.com/downloads/cas/PA6JERGA)
-* [Blog](https://www.ibm.com/blogs/internet-of-things/ibm-weather-operations-center/)
-
-## Landing Page
-
-* [weatheroperationscenter.ibm.com](https://weatheroperationscenter.ibm.com)
+* [Blog](https://www.ibm.com/blogs/internet-of-things/5-ways-to-manage-climate-risk/)
 
 ### Maximo Integration
 
