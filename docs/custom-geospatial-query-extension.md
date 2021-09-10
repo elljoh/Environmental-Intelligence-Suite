@@ -260,6 +260,6 @@ Navigate to Environmental Intelligence Suite and verify that the query results r
 <a id='user-content-sup-2' href='#sup-2'></a>
 <sup>2</sup> Backtick/Backquote `` ` `` [PowerShell Quoting Rules](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.core/about/about_quoting_rules)<br>
 <a id='user-content-sup-3' href='#sup-3'></a>
-<sup>3</sup> When pasting from the clipboard into PowerShell, double quotes (`"`) are escaped (`\"`)<br>
+<sup>3</sup> When pasting from the clipboard into PowerShell, double quotes (`"`) should be escaped (`\"`)<br>
 <a id='user-content-sup-4' href='#sup-4'></a>
 <sup>4</sup> [Tar and Curl Come to Windows!](https://techcommunity.microsoft.com/t5/containers/tar-and-curl-come-to-windows/ba-p/382409)
