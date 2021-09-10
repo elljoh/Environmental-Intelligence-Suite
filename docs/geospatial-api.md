@@ -48,7 +48,7 @@ below provides details.
 
 | **Linux, macOS** | **PowerShell<sup>2,3,4</sup>** |
 |:-----------------|:-----------------------------|
-| <pre><code>curl -X POST &#92;</code><br><code>     --url https://auth-b2b-twc.ibm.com/auth/GetBearerForClient &#92;</code><br><code>     -H 'Content-Type: application/json' &#92;</code><br><code>     -d '{"apiKey":"&lt;YOUR API KEY&gt;", "clientId":"ibm-pairs"}'</code></pre> |  <pre><code>curl.exe -X POST &#96;</code><br><code>         --url https://auth-b2b-twc.ibm.com/auth/GetBearerForClient &#96;</code><br><code>         -H 'Content-Type: application/json' &#96;</code><br><code>         -d '{\\"apiKey\\":\\"&lt;YOUR API KEY&gt;\\", \\"clientId\":\\"ibm-pairs\\"}'</code></pre> |
+| <pre><code>curl -X POST &#92;</code><br><code>     --url https://auth-b2b-twc.ibm.com/auth/GetBearerForClient &#92;</code><br><code>     -H 'Content-Type: application/json' &#92;</code><br><code>     -d '{"apiKey":"&lt;YOUR API KEY&gt;", "clientId":"ibm-pairs"}'</code></pre> |  <pre><code>curl.exe -X POST &#96;</code><br><code>         --url https://auth-b2b-twc.ibm.com/auth/GetBearerForClient &#96;</code><br><code>         -H 'Content-Type: application/json' &#96;</code><br><code>         -d '{\\"apiKey\\":\\"&lt;YOUR API KEY&gt;\\", \\"clientId\\":\\"ibm-pairs\\"}'</code></pre> |
 
 The result of **POST** `/auth/GetBearerForClient` will produce:
 

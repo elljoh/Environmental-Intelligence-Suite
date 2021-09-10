@@ -89,7 +89,7 @@ For example, *`registration-payload.json`*
 #### 1.2 Register the query
 | **Linux, macOS** | **PowerShell<sup>2,3,4</sup>** |
 |:-----------------|:-----------------------------|
-| <pre>curl -X POST "https://foundation.agtech.ibm.com/v2/layer/analytics/metadata" \ <br>  -H "accept: application/json" \ <br>  -H "Authorization: Bearer &lt;ACCESS_JWT&gt;" \ <br>  -H "Content-Type: application/json; charset=UTF-8" \ <br>  -d @registration-payload.json</pre> | <pre>curl.exe -X POST "https://foundation.agtech.ibm.com/v2/layer/analytics/metadata" `` ` `` <br>  -H "accept: application/json" `` ` `` <br>  -H "Authorization: Bearer &lt;ACCESS_JWT&gt;" `` ` `` <br>  -H "Content-Type: application/json; charset=UTF-8" `` ` `` <br>  -d @registration-payload.json</pre> |
+| <pre><code>curl -X POST "https://foundation.agtech.ibm.com/v2/layer/analytics/metadata" &#92;</code><br><code>  -H "accept: application/json" &#92;</code><br><code>  -H "Authorization: Bearer &lt;ACCESS_JWT&gt;" &#92;</code><br><code>  -H "Content-Type: application/json; charset=UTF-8" &#92;</code><br><code>  -d @registration-payload.json</code></pre> | <pre><code>curl.exe -X POST "https://foundation.agtech.ibm.com/v2/layer/analytics/metadata" &#96;</code><br><code>  -H "accept: application/json" &#96;</code><br><code>  -H "Authorization: Bearer &lt;ACCESS_JWT&gt;" &#96;</code><br><code>  -H "Content-Type: application/json; charset=UTF-8" &#96;</code><br><code>  -d @registration-payload.json</code></pre> |
 * [*registration-payload.json*](#11-create-the-registration-payload)
 
 <a id='user-content-registration-response' href='#registration-response'></a>
@@ -161,8 +161,8 @@ Adjust `styleProperties:palette` and `unit` as appropriate. Contact your IBM rep
 #### 2.2 Add Interactive Map (IMAP) custom layer
 <a id="user-content-access-jwt-ex2" href="#access-jwt-ex2"></a>
 | **Linux, macOS** | **PowerShell<sup>2,3,4</sup>** |
-|:-----------------|:-----------------------------|
-| <pre>curl -L -X PUT 'https://api.wsitrader.com/api/v1/IMAP/put-layer-config-block' \ <br>     -H 'Authorization: Bearer &lt;ACCESS_JWT&gt;' \ <br>     -H 'Content-Type: application/json' \ <br>     -d @layer-config-block.json</pre> | <pre>curl.exe -L -X PUT 'https://api.wsitrader.com/api/v1/IMAP/put-layer-config-block' `` ` `` <br>         -H 'Authorization: Bearer &lt;ACCESS_JWT&gt;' `` ` `` <br>         -H 'Content-Type: application/json' `` ` `` <br>         -d @layer-config-block.json</pre> |
+|:-----------------|:-------------------------------|
+| <pre><code>curl -L -X PUT 'https://api.wsitrader.com/api/v1/IMAP/put-layer-config-block' &#92;</code><br><code>     -H 'Authorization: Bearer &lt;ACCESS_JWT&gt;' &#92;</code><br><code>     -H 'Content-Type: application/json' &#92;</code><br><code>     -d @layer-config-block.json</code></pre> | <pre><code>curl.exe -L -X PUT 'https://api.wsitrader.com/api/v1/IMAP/put-layer-config-block' &#96;</code><br><code>         -H 'Authorization: Bearer &lt;ACCESS_JWT&gt;' &#96;</code><br><code>         -H 'Content-Type: application/json' &#96;</code><br><code>         -d @layer-config-block.json</code></pre> |
 * [*layer-config-block.json*](#layer-config-block)
 
 <b>Example response</b>:
@@ -197,14 +197,11 @@ Block Added.`
 
 ### For a subsequent query run, the query temporal interval could change (for instance to 2020-09-01 to 2020-09-30)
 
-
-<b>Call to</b>:
-
-``` shell
-curl -L -X POST 'https://pairs.res.ibm.com/v2/query' \
--H 'Content-Type: application/json' \
--H 'Authorization: Bearer <ACCESS_JWT>' \
--d '{
+#### 1. Create query payload
+<a id='user-content-query-payload-2' href='#query-payload-2'></a>
+*`query-payload-temporal-update.json`*
+``` json
+{
     "spatial": {
         "type": "square",
         "coordinates": [
@@ -226,11 +223,18 @@ curl -L -X POST 'https://pairs.res.ibm.com/v2/query' \
             "type": "raster"
         }
     ]
-}'
+}
 ```
 
-<b>Example Response</b>:
+#### 2. Submit the query and keep the query job id
 
+| **Linux, macOS** | **PowerShell<sup>2,3,4</sup>** |
+|:-----------------|:-------------------------------|
+| <pre><code>curl -L -X POST 'https://pairs.res.ibm.com/v2/query' &#92;</code><br><code>-H 'Content-Type: application/json' &#92;</code><br><code>-H 'Authorization: Bearer &lt;ACCESS_JWT&gt;' &#92;</code><br><code>-d @query-payload-temporal-update.json</code></pre>  | <pre><code>curl.exe -L -X POST 'https://pairs.res.ibm.com/v2/query' &#96;</code><br><code>-H 'Content-Type: application/json' &#96;</code><br><code>-H 'Authorization: Bearer &lt;ACCESS_JWT&gt;' &#96;</code><br><code>-d @query-payload-temporal-update.json</code></pre>  |
+* [*query-payload-temporal-update.json*](#query-payload-2)
+
+<a id='user-content-query-to-merge-response' href='#query-to-merge-response'></a>
+<b>Example Response</b>:
 ``` json
 {
     "id": "1607533200_04577287"
@@ -238,13 +242,13 @@ curl -L -X POST 'https://pairs.res.ibm.com/v2/query' \
 ```
 
 ### Merge the new job with original baseComputationId from Day 0 - Registration Part # 1 above
+* [Original `baseComputationId` - `1607533200_04490762`](#registration-response)
+* [Query to merge `id` - `1607533200_04577287`](#query-to-merge-response)
 
 <a id="user-content-access-jwt-ex3" href="#access-jwt-ex3"></a><b>Merge Jobs</b>:
-
-``` shell
-curl -L -X PUT 'https://pairs.res.ibm.com/v2/queryjobs/1607533200_04490762/merge/1607533200_04577287' \
--H 'Authorization: Bearer <ACCESS_JWT>'
-```
+| **Linux, macOS** | **PowerShell<sup>2,3,4</sup>** |
+|:-----------------|:-------------------------------|
+| <pre><code>curl -L -X PUT 'https://pairs.res.ibm.com/v2/queryjobs/1607533200_04490762/merge/1607533200_04577287' &#92;</code><br><code>-H 'Authorization: Bearer &lt;YOUR API KEY&gt;'</code></pre> | <pre><code>curl.exe -L -X PUT 'https://pairs.res.ibm.com/v2/queryjobs/1607533200_04490762/merge/1607533200_04577287' &#96;</code><br><code>-H 'Authorization: Bearer &lt;YOUR API KEY&gt;'</code></pre>  |
 
 As a consequence of the above operation, the output in Dashboard Visualization component would reflect computation from Sept 2020 (Day 1) rather than the original one from Aug 2020 (Day 0).
 
