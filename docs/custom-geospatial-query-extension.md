@@ -162,7 +162,7 @@ Adjust `styleProperties:palette` and `unit` as appropriate. Contact your IBM rep
 <a id="user-content-access-jwt-ex2" href="#access-jwt-ex2"></a>
 | **Linux, macOS** | **PowerShell<sup>2,3,4</sup>** |
 |:-----------------|:-------------------------------|
-| <pre><code>curl -L -X PUT 'https://api.wsitrader.com/api/v1/IMAP/put-layer-config-block' &#92;</code><br><code>     -H 'Authorization: Bearer &lt;ACCESS_JWT&gt;' &#92;</code><br><code>     -H 'Content-Type: application/json' &#92;</code><br><code>     -d @layer-config-block.json</code></pre> | <pre><code>curl.exe -L -X PUT 'https://api.wsitrader.com/api/v1/IMAP/put-layer-config-block' &#96;</code><br><code>         -H 'Authorization: Bearer &lt;ACCESS_JWT&gt;' &#96;</code><br><code>         -H 'Content-Type: application/json' &#96;</code><br><code>         -d @layer-config-block.json</code></pre> |
+| <pre><code>curl -L -X PUT 'https://api.wsitrader.com/api/v1/IMAP/put-layer-config-block' &#92;</code><br><code>     -H "Authorization: Bearer &lt;ACCESS_JWT&gt;" &#92;</code><br><code>     -H "Content-Type: application/json" &#92;</code><br><code>     -d @layer-config-block.json</code></pre> | <pre><code>curl.exe -L -X PUT 'https://api.wsitrader.com/api/v1/IMAP/put-layer-config-block' &#96;</code><br><code>         -H "Authorization: Bearer &lt;ACCESS_JWT&gt;" &#96;</code><br><code>         -H "Content-Type: application/json" &#96;</code><br><code>         -d @layer-config-block.json</code></pre> |
 * [*layer-config-block.json*](#layer-config-block)
 
 <b>Example response</b>:
@@ -230,7 +230,7 @@ Block Added.`
 
 | **Linux, macOS** | **PowerShell<sup>2,3,4</sup>** |
 |:-----------------|:-------------------------------|
-| <pre><code>curl -L -X POST 'https://pairs.res.ibm.com/v2/query' &#92;</code><br><code>-H 'Content-Type: application/json' &#92;</code><br><code>-H 'Authorization: Bearer &lt;ACCESS_JWT&gt;' &#92;</code><br><code>-d @query-payload-temporal-update.json</code></pre>  | <pre><code>curl.exe -L -X POST 'https://pairs.res.ibm.com/v2/query' &#96;</code><br><code>-H 'Content-Type: application/json' &#96;</code><br><code>-H 'Authorization: Bearer &lt;ACCESS_JWT&gt;' &#96;</code><br><code>-d @query-payload-temporal-update.json</code></pre>  |
+| <pre><code>curl -L -X POST 'https://pairs.res.ibm.com/v2/query' &#92;</code><br><code>-H "Content-Type: application/json" &#92;</code><br><code>-H "Authorization: Bearer &lt;ACCESS_JWT&gt;" &#92;</code><br><code>-d @query-payload-temporal-update.json</code></pre>  | <pre><code>curl.exe -L -X POST 'https://pairs.res.ibm.com/v2/query' &#96;</code><br><code>-H "Content-Type: application/json" &#96;</code><br><code>-H "Authorization: Bearer &lt;ACCESS_JWT&gt;" &#96;</code><br><code>-d @query-payload-temporal-update.json</code></pre>  |
 * [*query-payload-temporal-update.json*](#query-payload-2)
 
 <a id='user-content-query-to-merge-response' href='#query-to-merge-response'></a>
@@ -248,7 +248,7 @@ Block Added.`
 <a id="user-content-access-jwt-ex3" href="#access-jwt-ex3"></a><b>Merge Jobs</b>:
 | **Linux, macOS** | **PowerShell<sup>2,3,4</sup>** |
 |:-----------------|:-------------------------------|
-| <pre><code>curl -L -X PUT 'https://pairs.res.ibm.com/v2/queryjobs/1607533200_04490762/merge/1607533200_04577287' &#92;</code><br><code>-H 'Authorization: Bearer &lt;YOUR API KEY&gt;'</code></pre> | <pre><code>curl.exe -L -X PUT 'https://pairs.res.ibm.com/v2/queryjobs/1607533200_04490762/merge/1607533200_04577287' &#96;</code><br><code>-H 'Authorization: Bearer &lt;YOUR API KEY&gt;'</code></pre>  |
+| <pre><code>curl -L -X PUT 'https://pairs.res.ibm.com/v2/queryjobs/1607533200_04490762/merge/1607533200_04577287' &#92;</code><br><code>-H "Authorization: Bearer &lt;YOUR API KEY&gt;"</code></pre> | <pre><code>curl.exe -L -X PUT 'https://pairs.res.ibm.com/v2/queryjobs/1607533200_04490762/merge/1607533200_04577287' &#96;</code><br><code>-H "Authorization: Bearer &lt;YOUR API KEY&gt;"</code></pre>  |
 
 As a consequence of the above operation, the output in Dashboard Visualization component would reflect computation from Sept 2020 (Day 1) rather than the original one from Aug 2020 (Day 0).
 

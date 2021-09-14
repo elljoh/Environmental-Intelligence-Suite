@@ -48,7 +48,7 @@ below provides details.
 
 | **Linux, macOS** | **PowerShell<sup>2,3,4</sup>** |
 |:-----------------|:-----------------------------|
-| <pre><code>curl -X POST &#92;</code><br><code>     --url https://auth-b2b-twc.ibm.com/auth/GetBearerForClient &#92;</code><br><code>     -H 'Content-Type: application/json' &#92;</code><br><code>     -d '{"apiKey":"&lt;YOUR API KEY&gt;", "clientId":"ibm-pairs"}'</code></pre> |  <pre><code>curl.exe -X POST &#96;</code><br><code>         --url https://auth-b2b-twc.ibm.com/auth/GetBearerForClient &#96;</code><br><code>         -H 'Content-Type: application/json' &#96;</code><br><code>         -d '{\\"apiKey\\":\\"&lt;YOUR API KEY&gt;\\", \\"clientId\\":\\"ibm-pairs\\"}'</code></pre> |
+| <pre><code>curl -X POST &#92;</code><br><code>     --url https://auth-b2b-twc.ibm.com/auth/GetBearerForClient &#92;</code><br><code>     -H "Content-Type: application/json" &#92;</code><br><code>     -d '{"apiKey":"&lt;YOUR API KEY&gt;", "clientId":"ibm-pairs"}'</code></pre> |  <pre><code>curl.exe -X POST &#96;</code><br><code>         --url https://auth-b2b-twc.ibm.com/auth/GetBearerForClient &#96;</code><br><code>         -H "Content-Type: application/json" &#96;</code><br><code>         -d '{\\"apiKey\\":\\"&lt;YOUR API KEY&gt;\\", \\"clientId\\":\\"ibm-pairs\\"}'</code></pre> |
 
 The result of **POST** `/auth/GetBearerForClient` will produce:
 
@@ -70,7 +70,7 @@ the`Authorization` header Bearer realm in a request to the Geospatial Analytics 
 
 | **Linux, macOS**                                                 | **PowerShell<sup>2,3,4</sup>** |
 |:-----------------------------------------------------------------|:------------------------------|
-| <pre><code>curl -X POST --url https://pairs.res.ibm.com/v2/query &#92;</code><br><code>     -H 'Content-Type: application/json' &#92;</code><br><code>     -H 'Authorization: Bearer &lt;ACCESS_JWT&gt;' &#92;</code><br><code>     -d '{...omitted for brevity...}'</code></pre> | <pre><code>curl.exe -X POST --url https://pairs.res.ibm.com/v2/query &#96;</code><br><code>         -H 'Content-Type: application/json' &#96;</code><br><code>         -H 'Authorization: Bearer &lt;ACCESS_JWT&gt;' &#96;</code><br><code>         -d '{...omitted for brevity...}'</code></pre> |
+| <pre><code>curl -X POST --url https://pairs.res.ibm.com/v2/query &#92;</code><br><code>     -H "Content-Type: application/json" &#92;</code><br><code>     -H "Authorization: Bearer &lt;ACCESS_JWT&gt;" &#92;</code><br><code>     -d '{...omitted for brevity...}'</code></pre> | <pre><code>curl.exe -X POST --url https://pairs.res.ibm.com/v2/query &#96;</code><br><code>         -H "Content-Type: application/json" &#96;</code><br><code>         -H "Authorization: Bearer &lt;ACCESS_JWT&gt;" &#96;</code><br><code>         -d '{...omitted for brevity...}'</code></pre> |
 
 ### Refreshing an Access Token
 
@@ -83,13 +83,9 @@ When an access token expires, the `refresh_token` property value of `/auth/GetBe
 `/connect/token` JSON responses can be used to request a new `access_token` without re-authenticating
 with your API key as follows:
 
-``` shell
-curl -X POST https://auth-b2b-twc.ibm.com/connect/token \
-     -H 'Content-Type: application/x-www-form-urlencoded' \
-     --data-urlencode "grant_type=refresh_token" \
-     --data-urlencode "client_id=ibm-pairs" \
-     --data-urlencode "refresh_token=<REFRESH TOKEN>"
-```
+| **Linux, macOS**                                                 | **PowerShell<sup>2,3,4</sup>** |
+|:-----------------------------------------------------------------|:------------------------------|
+| <pre><code>curl -X POST https://auth-b2b-twc.ibm.com/connect/token &#92;</code><br><code>     -H "Content-Type: application/x-www-form-urlencoded" &#92;</code><br><code>     --data-urlencode "grant_type=refresh_token" &#92;</code><br><code>     --data-urlencode "client_id=ibm-pairs" &#92;</code><br><code>     --data-urlencode "refresh_token=&lt;REFRESH TOKEN&gt;"</code></pre> | <pre><code>curl.exe -X POST https://auth-b2b-twc.ibm.com/connect/token &#96;</code><br><code>     -H "Content-Type: application/x-www-form-urlencoded" &#96;</code><br><code>     --data-urlencode "grant_type=refresh_token" &#96;</code><br><code>     --data-urlencode "client_id=ibm-pairs" &#96;</code><br><code>     --data-urlencode "refresh_token=&lt;REFRESH TOKEN&gt;"</code></pre> |
 
 The result of **POST** `/connect/token` will produce a JSON response payload with a new `access_token` and
 `refresh_token` to use in subsequent Geospatial Analytics API and authorization server requests
