@@ -7,9 +7,8 @@ Geospatial Analytics API endpoints require an authenticated access token to be p
 HTTP Authorization header Bearer realm. For example:
 
 ``` text
-Authorization: Bearer <JSON Web Token>
+Authorization: Bearer xxxxxxxx
 ```
-* *See* [Obtaining an access token](#obtaining-an-access-token)<sup>1</sup>
 
 Geospatial Analytics uses the IBM Environmental Intelligence Suite authorization server to provide API access.
 The Environmental Intelligence Suite authorization server implements standard OAuth 2.0 and OpenId Connect 1.0 protocols.
@@ -40,15 +39,24 @@ below provides details.
 8. Geospatial Analytics API response payload; and the process to make API requests and refresh access token continues
 
 ### Obtaining an Access Token
-* **Tutorial examples where an access token is used**
-    * See *`<ACCESS_JWT>`* in:
-        * [Registration Part # 1 - Platform metadata](./custom-geospatial-query-extension.md#access-jwt-ex1)
-        * [Registration Part # 2 - Visualization metadata](./custom-geospatial-query-extension.md#access-jwt-ex2)
-        * [Merge the new job with original `baseComputationId`](./custom-geospatial-query-extension.md#access-jwt-ex3)
+* **Tutorial usages**
+    * <a href="./custom-geospatial-query-extension.md#access-jwt-ex1">`<ACCESS_JWT>` - Registration Part # 1 - Platform metadata</a>
+    * <a href="./custom-geospatial-query-extension.md#access-jwt-ex2">`<ACCESS_JWT>` - Registration Part # 2 - Visualization metadata</a>
+    * <a href="./custom-geospatial-query-extension.md#access-jwt-ex3">`<ACCESS_JWT>` - Merge the new job with original baseComputationId</a>
 
-| **Linux, macOS** | **PowerShell<sup>2,3,4</sup>** |
-|:-----------------|:-----------------------------|
-| <pre><code>curl -X POST &#92;</code><br><code>     --url https://auth-b2b-twc.ibm.com/auth/GetBearerForClient &#92;</code><br><code>     -H "Content-Type: application/json" &#92;</code><br><code>     -d '{"apiKey":"&lt;YOUR API KEY&gt;", "clientId":"ibm-pairs"}'</code></pre> |  <pre><code>curl.exe -X POST &#96;</code><br><code>         --url https://auth-b2b-twc.ibm.com/auth/GetBearerForClient &#96;</code><br><code>         -H "Content-Type: application/json" &#96;</code><br><code>         -d '{\\"apiKey\\":\\"&lt;YOUR API KEY&gt;\\", \\"clientId\\":\\"ibm-pairs\\"}'</code></pre> |
+An API endpoint is provided that accepts a JSON object and will return a JSON response containing an access token:
+- **POST** https://auth-b2b-twc.ibm.com/auth/GetBearerForClient
+- **Content-Type:** `application/json`
+- **Expected Data:** `{"apiKey":"xxxxxxxx", "clientId":"ibm-pairs"}`
+
+For example:
+
+``` shell
+curl --request POST \
+     --url https://auth-b2b-twc.ibm.com/auth/GetBearerForClient \
+     --header 'Content-Type: application/json' \
+     --data '{"apiKey":"xxxxxxxx", "clientId":"ibm-pairs"}'
+```
 
 The result of **POST** `/auth/GetBearerForClient` will produce:
 
@@ -68,9 +76,13 @@ which submits a Geospatial Analytics API query request.
 In this example, the value of the `access_token` property in the response above is used as the value for
 the`Authorization` header Bearer realm in a request to the Geospatial Analytics API `/v2/query` endpoint.
 
-| **Linux, macOS**                                                 | **PowerShell<sup>2,3,4</sup>** |
-|:-----------------------------------------------------------------|:------------------------------|
-| <pre><code>curl -X POST --url https://pairs.res.ibm.com/v2/query &#92;</code><br><code>     -H "Content-Type: application/json" &#92;</code><br><code>     -H "Authorization: Bearer &lt;ACCESS_JWT&gt;" &#92;</code><br><code>     -d '{...omitted for brevity...}'</code></pre> | <pre><code>curl.exe -X POST --url https://pairs.res.ibm.com/v2/query &#96;</code><br><code>         -H "Content-Type: application/json" &#96;</code><br><code>         -H "Authorization: Bearer &lt;ACCESS_JWT&gt;" &#96;</code><br><code>         -d '{...omitted for brevity...}'</code></pre> |
+``` shell
+curl --request POST \
+     --url https://pairs.res.ibm.com/v2/query \
+     --header 'Content-Type: application/json' \
+     --header 'Authorization: Bearer <ACCESS_JWT>' \
+     --data '{...omitted for brevity...}'
+```
 
 ### Refreshing an Access Token
 
@@ -83,20 +95,15 @@ When an access token expires, the `refresh_token` property value of `/auth/GetBe
 `/connect/token` JSON responses can be used to request a new `access_token` without re-authenticating
 with your API key as follows:
 
-| **Linux, macOS**                                                 | **PowerShell<sup>2,3,4</sup>** |
-|:-----------------------------------------------------------------|:------------------------------|
-| <pre><code>curl -X POST https://auth-b2b-twc.ibm.com/connect/token &#92;</code><br><code>     -H "Content-Type: application/x-www-form-urlencoded" &#92;</code><br><code>     --data-urlencode "grant_type=refresh_token" &#92;</code><br><code>     --data-urlencode "client_id=ibm-pairs" &#92;</code><br><code>     --data-urlencode "refresh_token=&lt;REFRESH TOKEN&gt;"</code></pre> | <pre><code>curl.exe -X POST https://auth-b2b-twc.ibm.com/connect/token &#96;</code><br><code>     -H "Content-Type: application/x-www-form-urlencoded" &#96;</code><br><code>     --data-urlencode "grant_type=refresh_token" &#96;</code><br><code>     --data-urlencode "client_id=ibm-pairs" &#96;</code><br><code>     --data-urlencode "refresh_token=&lt;REFRESH TOKEN&gt;"</code></pre> |
+``` shell
+curl --request POST \
+     --url https://auth-b2b-twc.ibm.com/connect/token \
+     --header 'Content-Type: application/x-www-form-urlencoded' \
+     --data-urlencode "grant_type=refresh_token" \
+     --data-urlencode "client_id=ibm-pairs" \
+     --data-urlencode "refresh_token=<REFRESH TOKEN>"
+```
 
 The result of **POST** `/connect/token` will produce a JSON response payload with a new `access_token` and
 `refresh_token` to use in subsequent Geospatial Analytics API and authorization server requests
 where applicable..
-
----
-<a id='user-content-sup-1' href='#sup-1'></a>
-<sup>1</sup> [`JSON Web Token`](https://en.wikipedia.org/wiki/JSON_Web_Token)<br>
-<a id='user-content-sup-2' href='#sup-2'></a>
-<sup>2</sup> Backtick/Backquote `` ` `` [PowerShell Quoting Rules](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.core/about/about_quoting_rules)<br>
-<a id='user-content-sup-3' href='#sup-3'></a>
-<sup>3</sup> When pasting from the clipboard into PowerShell, double quotes (`"`) should be escaped (`\"`)<br>
-<a id='user-content-sup-4' href='#sup-4'></a>
-<sup>4</sup> [Tar and Curl Come to Windows!](https://techcommunity.microsoft.com/t5/containers/tar-and-curl-come-to-windows/ba-p/382409)
