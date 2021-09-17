@@ -8,7 +8,7 @@ __Action__: Contact your IBM representative to get your IBM Environmental Intell
 
  ### Identify Datasets
 
- Log into IBM Environmental Intelligence Suite (weatheroperationscenter.ibm.com), navigate to Geospatial Analytics using left-nav menu and use Data Explorer to search for relevant datasets.
+ Log into IBM Environmental Intelligence Suite (https://environmentalintelligencesuite.ibm.com/), navigate to Geospatial Analytics using left-nav menu and use Data Explorer to search for relevant datasets.
 
  ### Areas of Interest
 
@@ -24,9 +24,9 @@ __Action__: Contact your IBM representative to get your IBM Environmental Intell
 
  Once you have identified a specific layer in PAIRS that has the data for the time-interval of your interest, form a query similar to the example shown below, specifying your own `spatial:coordinates`, `temporal:intervals` and `layers:id`.  Subsequently, proceed to Day 0 below to operationalize it for viewing within Dashboard Visualization component of EIS.
 
-<a id='user-content-query-payload-1' href='#query-payload-1'></a>
 <b>Example geospatial `QUERY_PAYLOAD` that is ready to be operationalized </b>:
-``` json
+
+``` shell
 {
  "spatial": {
     "type":"square",
@@ -52,47 +52,20 @@ __Action__: Contact your IBM representative to get your IBM Environmental Intell
 
 Get an access token:
 1. Follow the steps in [Geospatial Analytics API - Obtaining an Access Token](./geospatial-api.md#obtaining-an-access-token) to obtain the token indicated by `<ACCESS_JWT>`
-2. Copy the value corresponding to `<ACCESS_JWT>` from the step above to use in the [registration API call below](#12-register-the-query).
+2. Copy the value corresponding to `<ACCESS_JWT>` from the step above to use in the Import API call below.
 
 ### Registration Part # 1 - Platform metadata
 
-#### Query registration payload
-The JSON body of a query registration request contains the Geospatial Analytics (PAIRS) query.
-It is expected that the query JSON is:
-1. Encoded as a string in the `pairsPayload` property;
-2. Quotes within the query JSON are escaped e.g. `\"` and newlines removed.
+<a id="user-content-access-jwt-ex1" href="#access-jwt-ex1"></a><b>Substitute `ACCESS_JWT`, your `QUERY_PAYLOAD` and `ANALYTICS_NAME` below - and make the curl request in a terminal window : </b>:
 
-Query registration uses the API call [`/v2/layer/analytics/metadata`](https://foundation.agtech.ibm.com/v2/swagger/#/Custom%20Layers/registerAnalytic). Example payload value:
-```
-{
-  "pairsPayload": "string",
-  "analyticsName": "string"
-}
+``` shell
+curl -X POST "https://foundation.agtech.ibm.com/v2/layer/analytics/metadata" \
+  -H "accept: application/json" \
+  -H "Authorization: Bearer <ACCESS_JWT>" \
+  -H "Content-Type: application/json; charset=UTF-8" \
+  -d "{\"pairsPayload\":\"<QUERY_PAYLOAD>\",\"analyticsName\":\"<ANALYTICS_NAME>\"}"
 ```
 
-The [example Geospatial Analytics](#query-payload-1) is shown below in [*Create the registration payload*](#11-create-the-registration-payload)
-encoded as a string with embedded JSON quote characters escaped and newlines removed.
-
-#### 1.1 Create the registration payload
-Create a JSON file with the [query registration payload](#query-registration-payload).
-
-For example, *`registration-payload.json`*
-``` json
-{
-  "pairsPayload": "{ \"spatial\": { \"type\":\"square\", \"aoi\":null, \"coordinates\":[38,-122,39,-121] }, \"temporal\":{ \"intervals\":[{ \"start\":\"2020-08-01\", \"end\":\"2020-08-31\" }] }, \"layers\":[{ \"id\":\"51\", \"type\":\"raster\" }]}",
-  "analyticsName": "query-registration-ex-pt1"
-}
-```
-* [*example query payload*](#query-payload-1) is formatted as described in [Query registration payload](#query-registration-payload)
-
-<a id="user-content-access-jwt-ex1" href="#access-jwt-ex1"></a>
-#### 1.2 Register the query
-| **Linux, macOS** | **PowerShell<sup>2,3,4</sup>** |
-|:-----------------|:-----------------------------|
-| <pre><code>curl -X POST "https://foundation.agtech.ibm.com/v2/layer/analytics/metadata" &#92;</code><br><code>  -H "accept: application/json" &#92;</code><br><code>  -H "Authorization: Bearer &lt;ACCESS_JWT&gt;" &#92;</code><br><code>  -H "Content-Type: application/json; charset=UTF-8" &#92;</code><br><code>  -d @registration-payload.json</code></pre> | <pre><code>curl.exe -X POST "https://foundation.agtech.ibm.com/v2/layer/analytics/metadata" &#96;</code><br><code>  -H "accept: application/json" &#96;</code><br><code>  -H "Authorization: Bearer &lt;ACCESS_JWT&gt;" &#96;</code><br><code>  -H "Content-Type: application/json; charset=UTF-8" &#96;</code><br><code>  -d @registration-payload.json</code></pre> |
-* [*registration-payload.json*](#11-create-the-registration-payload)
-
-<a id='user-content-registration-response' href='#registration-response'></a>
 <b>Example Response</b>:
 
 ``` json
@@ -107,11 +80,17 @@ For example, *`registration-payload.json`*
 
 ### Registration Part # 2 - Visualization metadata
 
-#### 2.1 Create the layer config payload
-<a id='user-content-layer-config-block' href='#layer-config-block'></a>
-For example, *`layer-config-block.json`*
-``` json
-{"VIEWERSHIP_ROLE" : "ALL", "CONFIG_BLOCK": {
+
+ Before making the sample request below, modify the <b>`id`</b> to be something unique, set the desired <b>`displayName`</b> and substitute the correct <b>`dataAttributes:uuid`</b> using the `analyticsUuid` value from the response above. <a id="user-content-access-jwt-ex2" href="#access-jwt-ex2"></a>Also, substitute ACCESS_JWT
+
+ Adjust `styleProperties:palette` and `unit` as appropriate. Contact your IBM representative or Expert Labs to discuss adjusting additional properties relevant to your specific geospatial analytics use-case.
+
+
+``` shell
+curl --location --request PUT 'https://api.wsitrader.com/api/v1/IMAP/put-layer-config-block' \
+--header 'Authorization: Bearer <ACCESS_JWT>' \
+--header 'Content-Type: application/json' \
+--data '{"VIEWERSHIP_ROLE" : "ALL", "CONFIG_BLOCK": {
     "id": "customQuery-staging-test01",
     "modelRegistryId": null,
     "displayName": "Staging Test - Custom Query 01",
@@ -146,33 +125,22 @@ For example, *`layer-config-block.json`*
       "extendMaximumColor": true,
       "invalidDataValue": -9999
     }
-  }}
+  }}'
 ```
-
-Before making the [sample request below](#add-the-layer):
-1. Modify the <b>`id`</b> to be something unique
-2. Set the desired <b>`displayName`</b>
-3. Substitute the correct <b>`dataAttributes.uuid`</b> using the `analyticsUuid` value from the [response above](#registration-response)
-4. Substitute `<ACCESS_JWT>` ([*Obtaining an Access Token*](./geospatial-api.md#obtaining-an-access-token)).
-
-Adjust `styleProperties:palette` and `unit` as appropriate. Contact your IBM representative or Expert Labs to discuss adjusting additional properties relevant to your specific geospatial analytics use-case.
-
-<a id='user-content-add-the-layer' href='#add-the-layer'></a>
-#### 2.2 Add Interactive Map (IMAP) custom layer
-<a id="user-content-access-jwt-ex2" href="#access-jwt-ex2"></a>
-| **Linux, macOS** | **PowerShell<sup>2,3,4</sup>** |
-|:-----------------|:-------------------------------|
-| <pre><code>curl -L -X PUT 'https://api.wsitrader.com/api/v1/IMAP/put-layer-config-block' &#92;</code><br><code>     -H "Authorization: Bearer &lt;ACCESS_JWT&gt;" &#92;</code><br><code>     -H "Content-Type: application/json" &#92;</code><br><code>     -d @layer-config-block.json</code></pre> | <pre><code>curl.exe -L -X PUT 'https://api.wsitrader.com/api/v1/IMAP/put-layer-config-block' &#96;</code><br><code>         -H "Authorization: Bearer &lt;ACCESS_JWT&gt;" &#96;</code><br><code>         -H "Content-Type: application/json" &#96;</code><br><code>         -d @layer-config-block.json</code></pre> |
-* [*layer-config-block.json*](#layer-config-block)
 
 <b>Example response</b>:
 
 `Response: 200
 Block Added.`
 
+
+
+
+
+
 ## Navigate to IBM Environmental Intelligence Suite - Dashboard Visualization
 
-1. Login to IBM Environmental Intelligence Suite with your username and password by launching https://environmentalintelligencesuite.ibm.com/ - and navigate to Dashboard Visualization -> Interactive Map
+1. Login to IBM Environmental Intelligence Suite with your username and password by launching https://environmentalintelligencesuite.ibm.com - and navigate to Dashboard Visualization -> Interactive Map
 
 ![alt text](https://github.com/IBM/Environmental-Intelligence-Suite/blob/master/docs/resources/woc-maximo01.png?raw=true)
 
@@ -197,11 +165,14 @@ Block Added.`
 
 ### For a subsequent query run, the query temporal interval could change (for instance to 2020-09-01 to 2020-09-30)
 
-#### 1. Create query payload
-<a id='user-content-query-payload-2' href='#query-payload-2'></a>
-*`query-payload-temporal-update.json`*
-``` json
-{
+
+<b>Call to</b>:
+
+``` shell
+curl --location --request POST 'https://pairs.res.ibm.com/v2/query' \
+--header 'Content-Type: application/json' \
+--header 'Authorization: Bearer <ACCESS_JWT>' \
+--data '{
     "spatial": {
         "type": "square",
         "coordinates": [
@@ -223,18 +194,11 @@ Block Added.`
             "type": "raster"
         }
     ]
-}
+}'
 ```
 
-#### 2. Submit the query and keep the query job id
-
-| **Linux, macOS** | **PowerShell<sup>2,3,4</sup>** |
-|:-----------------|:-------------------------------|
-| <pre><code>curl -L -X POST 'https://pairs.res.ibm.com/v2/query' &#92;</code><br><code>-H "Content-Type: application/json" &#92;</code><br><code>-H "Authorization: Bearer &lt;ACCESS_JWT&gt;" &#92;</code><br><code>-d @query-payload-temporal-update.json</code></pre>  | <pre><code>curl.exe -L -X POST 'https://pairs.res.ibm.com/v2/query' &#96;</code><br><code>-H "Content-Type: application/json" &#96;</code><br><code>-H "Authorization: Bearer &lt;ACCESS_JWT&gt;" &#96;</code><br><code>-d @query-payload-temporal-update.json</code></pre>  |
-* [*query-payload-temporal-update.json*](#query-payload-2)
-
-<a id='user-content-query-to-merge-response' href='#query-to-merge-response'></a>
 <b>Example Response</b>:
+
 ``` json
 {
     "id": "1607533200_04577287"
@@ -242,24 +206,14 @@ Block Added.`
 ```
 
 ### Merge the new job with original baseComputationId from Day 0 - Registration Part # 1 above
-* [Original `baseComputationId` - `1607533200_04490762`](#registration-response)
-* [Query to merge `id` - `1607533200_04577287`](#query-to-merge-response)
 
 <a id="user-content-access-jwt-ex3" href="#access-jwt-ex3"></a><b>Merge Jobs</b>:
-| **Linux, macOS** | **PowerShell<sup>2,3,4</sup>** |
-|:-----------------|:-------------------------------|
-| <pre><code>curl -L -X PUT 'https://pairs.res.ibm.com/v2/queryjobs/1607533200_04490762/merge/1607533200_04577287' &#92;</code><br><code>-H "Authorization: Bearer &lt;YOUR API KEY&gt;"</code></pre> | <pre><code>curl.exe -L -X PUT 'https://pairs.res.ibm.com/v2/queryjobs/1607533200_04490762/merge/1607533200_04577287' &#96;</code><br><code>-H "Authorization: Bearer &lt;YOUR API KEY&gt;"</code></pre>  |
+
+``` shell
+curl --location --request PUT 'https://pairs.res.ibm.com/v2/queryjobs/1607533200_04490762/merge/1607533200_04577287' \
+--header 'Authorization: Bearer <ACCESS_JWT>'
+```
 
 As a consequence of the above operation, the output in Dashboard Visualization component would reflect computation from Sept 2020 (Day 1) rather than the original one from Aug 2020 (Day 0).
 
 Navigate to Environmental Intelligence Suite and verify that the query results reflect computational change due to temporal movement from Day 0 to Day 1.
-
----
-<a id='user-content-sup-1' href='#sup-1'></a>
-<sup>1</sup> [`JSON Web Token`](https://en.wikipedia.org/wiki/JSON_Web_Token)<br>
-<a id='user-content-sup-2' href='#sup-2'></a>
-<sup>2</sup> Backtick/Backquote `` ` `` [PowerShell Quoting Rules](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.core/about/about_quoting_rules)<br>
-<a id='user-content-sup-3' href='#sup-3'></a>
-<sup>3</sup> When pasting from the clipboard into PowerShell, double quotes (`"`) should be escaped (`\"`)<br>
-<a id='user-content-sup-4' href='#sup-4'></a>
-<sup>4</sup> [Tar and Curl Come to Windows!](https://techcommunity.microsoft.com/t5/containers/tar-and-curl-come-to-windows/ba-p/382409)
