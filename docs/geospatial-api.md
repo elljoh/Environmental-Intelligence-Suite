@@ -2,6 +2,10 @@
 
 ## Authentication
 
+1. [Overview](#overview)
+2. [Get an access token](#obtaining-an-access-token1)
+3. [Refresh an access token](#refreshing-an-access-token)
+
 ### Overview
 Geospatial Analytics API endpoints require an authenticated access token to be provided as an
 HTTP Authorization header Bearer realm. For example:
@@ -15,10 +19,10 @@ Geospatial Analytics uses the IBM Environmental Intelligence Suite authorization
 The Environmental Intelligence Suite authorization server implements standard OAuth 2.0 and OpenId Connect 1.0 protocols.
 
 Authorization server endpoints are located at the base Uri:
-- https://auth-b2b-twc.ibm.com/
+- [https://auth-b2b-twc.ibm.com/](https://auth-b2b-twc.ibm.com/)
 
 An OpenId Connect discovery document for the authorization server is located at the Uri:
-- https://auth-b2b-twc.ibm.com/.well-known/openid-configuration
+- [https://auth-b2b-twc.ibm.com/.well-known/openid-configuration](https://auth-b2b-twc.ibm.com/.well-known/openid-configuration)
 
 To make Geospatial Analytics API requests an API key is provided to obtain an access token
 which is then used in API requests to confirm authentication and to execute further authorization controls.
@@ -39,31 +43,30 @@ below provides details.
 7. The new access token is used for Geospatial Analytics API requests
 8. Geospatial Analytics API response payload; and the process to make API requests and refresh access token continues
 
-### Obtaining an Access Token
+### Obtaining an Access Token<sup>1</sup>
 * **Tutorial examples where an access token is used**
     * See *`<ACCESS_JWT>`* in:
         * [Registration Part # 1 - Platform metadata](./custom-geospatial-query-extension.md#access-jwt-ex1)
         * [Registration Part # 2 - Visualization metadata](./custom-geospatial-query-extension.md#access-jwt-ex2)
         * [Merge the new job with original `baseComputationId`](./custom-geospatial-query-extension.md#access-jwt-ex3)
 
-| **Linux, macOS** | **PowerShell<sup>2,3,4</sup>** |
-|:-----------------|:-----------------------------|
-| <pre><code>curl -X POST &#92;</code><br><code>     --url https://auth-b2b-twc.ibm.com/auth/GetBearerForClient &#92;</code><br><code>     -H "Content-Type: application/json" &#92;</code><br><code>     -d '{"apiKey":"&lt;YOUR API KEY&gt;", "clientId":"ibm-pairs"}'</code></pre> |  <pre><code>curl.exe -X POST &#96;</code><br><code>         --url https://auth-b2b-twc.ibm.com/auth/GetBearerForClient &#96;</code><br><code>         -H "Content-Type: application/json" &#96;</code><br><code>         -d '{\\"apiKey\\":\\"&lt;YOUR API KEY&gt;\\", \\"clientId\\":\\"ibm-pairs\\"}'</code></pre> |
+**Linux, macOS**
 
-
-**DRAFT-TEST**
+``` shell
+curl -X POST \
+         --url https://auth-b2b-twc.ibm.com/auth/GetBearerForClient \
+         -H "Content-Type: application/json" \
+         -d '{"apiKey":"<YOUR API KEY>", "clientId":"ibm-pairs"}'
+```
 
 **PowerShell<sup>2,3,4</sup>**
-<pre lang="shell"><code>curl.exe -X POST &#96;</code><br><code>         --url https://auth-b2b-twc.ibm.com/auth/GetBearerForClient &#96;</code><br><code>         -H "Content-Type: application/json" &#96;</code><br><code>         -d '{&#92;"apiKey&#92;":&#92;"&lt;YOUR API KEY&gt;&#92;", &#92;"clientId&#92;":&#92;"ibm-pairs&#92;"}'</code></pre>
 
-``` powershell
+``` shell
 curl.exe -X POST `
          --url https://auth-b2b-twc.ibm.com/auth/GetBearerForClient `
          -H "Content-Type: application/json" `
          -d '{\"apiKey\":\"<YOUR API KEY>\", \"clientId\":\"ibm-pairs\"}'
 ```
-
-**EOF-DRAFT-TEST**
 
 The result of **POST** `/auth/GetBearerForClient` will produce:
 
@@ -83,9 +86,23 @@ which submits a Geospatial Analytics API query request.
 In this example, the value of the `access_token` property in the response above is used as the value for
 the`Authorization` header Bearer realm in a request to the Geospatial Analytics API `/v2/query` endpoint.
 
-| **Linux, macOS**                                                 | **PowerShell<sup>2,3,4</sup>** |
-|:-----------------------------------------------------------------|:------------------------------|
-| <pre><code>curl -X POST --url https://pairs.res.ibm.com/v2/query &#92;</code><br><code>     -H "Content-Type: application/json" &#92;</code><br><code>     -H "Authorization: Bearer &lt;ACCESS_JWT&gt;" &#92;</code><br><code>     -d '{...omitted for brevity...}'</code></pre> | <pre><code>curl.exe -X POST --url https://pairs.res.ibm.com/v2/query &#96;</code><br><code>         -H "Content-Type: application/json" &#96;</code><br><code>         -H "Authorization: Bearer &lt;ACCESS_JWT&gt;" &#96;</code><br><code>         -d '{...omitted for brevity...}'</code></pre> |
+**Linux, macOS**
+``` shell
+curl --request POST \
+     --url https://pairs.res.ibm.com/v2/query \
+     --header 'Content-Type: application/json' \
+     --header 'Authorization: Bearer <ACCESS_JWT>' \
+     --data '{...omitted for brevity...}'
+```
+
+**PowerShell<sup>2,3,4</sup>**
+``` shell
+curl.exe --request POST `
+     --url https://pairs.res.ibm.com/v2/query `
+     --header 'Content-Type: application/json' `
+     --header 'Authorization: Bearer <ACCESS_JWT>' `
+     --data '{...omitted for brevity...}'
+```
 
 ### Refreshing an Access Token
 
@@ -98,9 +115,25 @@ When an access token expires, the `refresh_token` property value of `/auth/GetBe
 `/connect/token` JSON responses can be used to request a new `access_token` without re-authenticating
 with your API key as follows:
 
-| **Linux, macOS**                                                 | **PowerShell<sup>2,3,4</sup>** |
-|:-----------------------------------------------------------------|:------------------------------|
-| <pre><code>curl -X POST https://auth-b2b-twc.ibm.com/connect/token &#92;</code><br><code>     -H "Content-Type: application/x-www-form-urlencoded" &#92;</code><br><code>     --data-urlencode "grant_type=refresh_token" &#92;</code><br><code>     --data-urlencode "client_id=ibm-pairs" &#92;</code><br><code>     --data-urlencode "refresh_token=&lt;REFRESH TOKEN&gt;"</code></pre> | <pre><code>curl.exe -X POST https://auth-b2b-twc.ibm.com/connect/token &#96;</code><br><code>     -H "Content-Type: application/x-www-form-urlencoded" &#96;</code><br><code>     --data-urlencode "grant_type=refresh_token" &#96;</code><br><code>     --data-urlencode "client_id=ibm-pairs" &#96;</code><br><code>     --data-urlencode "refresh_token=&lt;REFRESH TOKEN&gt;"</code></pre> |
+**Linux, macOS**
+``` shell
+curl --request POST \
+     --url https://auth-b2b-twc.ibm.com/connect/token \
+     --header 'Content-Type: application/x-www-form-urlencoded' \
+     --data-urlencode "grant_type=refresh_token" \
+     --data-urlencode "client_id=ibm-pairs" \
+     --data-urlencode "refresh_token=<REFRESH TOKEN>"
+```
+
+**PowerShell<sup>2,3,4</sup>**
+``` shell
+curl.exe --request POST `
+     --url https://auth-b2b-twc.ibm.com/connect/token `
+     --header 'Content-Type: application/x-www-form-urlencoded' `
+     --data-urlencode "grant_type=refresh_token" `
+     --data-urlencode "client_id=ibm-pairs" `
+     --data-urlencode "refresh_token=<REFRESH TOKEN>"
+```
 
 The result of **POST** `/connect/token` will produce a JSON response payload with a new `access_token` and
 `refresh_token` to use in subsequent Geospatial Analytics API and authorization server requests
