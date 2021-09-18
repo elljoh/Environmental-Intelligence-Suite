@@ -277,7 +277,7 @@ curl.exe -L -X POST 'https://pairs.res.ibm.com/v2/query' `
 * [*query-payload-temporal-update.json*](#query-payload-2)
 
 <a id='query-to-merge-response' href='#query-to-merge-response'></a>
-<b>Example Response</b>:
+<b>Query to merge response</b>:
 ``` json
 {
     "id": "1607533200_04577287"
