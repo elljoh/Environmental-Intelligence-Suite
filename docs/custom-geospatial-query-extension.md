@@ -24,7 +24,7 @@ Optionally, create a new project in a data science environment (e.g, IBM Watson 
 
 Once you have identified a specific layer in PAIRS that has the data for the time-interval of your interest, form a query similar to the example shown below, specifying your own `spatial:coordinates`, `temporal:intervals` and `layers:id`.  Subsequently, proceed to Day 0 below to operationalize it for viewing within Dashboard Visualization component of EIS.
 
-<a id='user-content-query-payload-1' href='#query-payload-1'></a>
+<a id='query-payload-1' href='#query-payload-1'></a>
 <b>Example geospatial `QUERY_PAYLOAD` that is ready to be operationalized </b>:
 ``` json
 {
@@ -74,7 +74,7 @@ The [example Geospatial Analytics](#query-payload-1) is shown below in [*Create 
 encoded as a string with embedded JSON quote characters escaped and newlines removed.
 
 #### 1.1 Create the registration payload
-Create a JSON file with the [query registration payload](#query-registration-payload).
+Create a JSON file with the query registration payload as shown below.
 
 For example, *`registration-payload.json`*
 ``` json
@@ -83,9 +83,9 @@ For example, *`registration-payload.json`*
   "analyticsName": "query-registration-ex-pt1"
 }
 ```
-* [*example query payload*](#query-payload-1) is formatted as described in [Query registration payload](#query-registration-payload)
+* [*example query payload*](#query-payload-1) above is formatted as described in [Query registration payload](#query-registration-payload)
 
-<a id="user-content-access-jwt-ex1" href="#access-jwt-ex1"></a>
+<a id="access-jwt-ex1" href="#access-jwt-ex1"></a>
 #### 1.2 Register the query
 
 **Linux, macOS**
@@ -110,8 +110,6 @@ curl.exe -X POST "https://foundation.agtech.ibm.com/v2/layer/analytics/metadata"
 
 <a id='registration-response' href='#registration-response'></a>
 <b>Example Response</b>:
-<!-- {: #registration-response } -->
-
 ``` json
 [
   {
@@ -125,7 +123,7 @@ curl.exe -X POST "https://foundation.agtech.ibm.com/v2/layer/analytics/metadata"
 ### Registration Part # 2 - Visualization metadata
 
 #### 2.1 Create the layer config payload
-<a id='user-content-layer-config-block' href='#layer-config-block'></a>
+<a id='layer-config-block' href='#layer-config-block'></a>
 For example, *`layer-config-block.json`*
 ``` json
 {"VIEWERSHIP_ROLE" : "ALL", "CONFIG_BLOCK": {
@@ -166,17 +164,17 @@ For example, *`layer-config-block.json`*
   }}
 ```
 
-Before making the [sample request below](#user-content-add-the-layer):
+Before making the [sample request below](#add-the-layer):
 1. Modify the <b>`id`</b> to be something unique
 2. Set the desired <b>`displayName`</b>
-3. Substitute the correct <b>`dataAttributes.uuid`</b> using the `analyticsUuid` value from the [response above](#user-content-registration-response)
+3. Substitute the correct <b>`dataAttributes.uuid`</b> using the `analyticsUuid` value from the [response above](#registration-response)
 4. Substitute `<ACCESS_JWT>` ([*Obtaining an Access Token*](./geospatial-api.md#obtaining-an-access-token1)).
 
 Adjust `styleProperties:palette` and `unit` as appropriate. Contact your IBM representative or Expert Labs to discuss adjusting additional properties relevant to your specific geospatial analytics use-case.
 
-<a id='user-content-add-the-layer' href='#add-the-layer'></a>
+<a id='add-the-layer' href='#add-the-layer'></a>
 #### 2.2 Add Interactive Map (IMAP) custom layer
-<a id="user-content-access-jwt-ex2" href="#access-jwt-ex2"></a>
+<a id="access-jwt-ex2" href="#access-jwt-ex2"></a>
 **Linux, macOS**
 
 ``` shell
@@ -229,7 +227,7 @@ Block Added.`
 ### For a subsequent query run, the query temporal interval could change (for instance to 2020-09-01 to 2020-09-30)
 
 #### 1. Create query payload
-<a id='user-content-query-payload-2' href='#query-payload-2'></a>
+<a id='query-payload-2' href='#query-payload-2'></a>
 *`query-payload-temporal-update.json`*
 ``` json
 {
@@ -278,7 +276,7 @@ curl.exe -L -X POST 'https://pairs.res.ibm.com/v2/query' `
 ```
 * [*query-payload-temporal-update.json*](#query-payload-2)
 
-<a id='user-content-query-to-merge-response' href='#query-to-merge-response'></a>
+<a id='query-to-merge-response' href='#query-to-merge-response'></a>
 <b>Example Response</b>:
 ``` json
 {
@@ -290,7 +288,7 @@ curl.exe -L -X POST 'https://pairs.res.ibm.com/v2/query' `
 * [Original `baseComputationId` - `1607533200_04490762`](#registration-response)
 * [Query to merge `id` - `1607533200_04577287`](#query-to-merge-response)
 
-<a id="user-content-access-jwt-ex3" href="#access-jwt-ex3"></a><b>Merge Jobs</b>:
+<a id="access-jwt-ex3" href="#access-jwt-ex3"></a><b>Merge Jobs</b>:
 **Linux, macOS**
 ``` shell
 curl -L -X PUT 'https://pairs.res.ibm.com/v2/queryjobs/1607533200_04490762/merge/1607533200_04577287' \
@@ -308,11 +306,11 @@ As a consequence of the above operation, the output in Dashboard Visualization c
 Navigate to Environmental Intelligence Suite and verify that the query results reflect computational change due to temporal movement from Day 0 to Day 1.
 
 ---
-<a id='user-content-sup-1' href='#sup-1'></a>
+<a id='sup-1' href='#sup-1'></a>
 <sup>1</sup> [`JSON Web Token`](https://en.wikipedia.org/wiki/JSON_Web_Token)<br>
-<a id='user-content-sup-2' href='#sup-2'></a>
+<a id='sup-2' href='#sup-2'></a>
 <sup>2</sup> Backtick/Backquote `` ` `` [PowerShell Quoting Rules](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.core/about/about_quoting_rules)<br>
-<a id='user-content-sup-3' href='#sup-3'></a>
+<a id='sup-3' href='#sup-3'></a>
 <sup>3</sup> When pasting from the clipboard into PowerShell, double quotes (`"`) should be escaped (`\"`)<br>
-<a id='user-content-sup-4' href='#sup-4'></a>
+<a id='sup-4' href='#sup-4'></a>
 <sup>4</sup> [Tar and Curl Come to Windows!](https://techcommunity.microsoft.com/t5/containers/tar-and-curl-come-to-windows/ba-p/382409)
