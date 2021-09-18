@@ -108,9 +108,9 @@ curl.exe -X POST "https://foundation.agtech.ibm.com/v2/layer/analytics/metadata"
 ```
 * [*registration-payload.json*](#11-create-the-registration-payload)
 
-<!-- <a id='user-content-registration-response' href='#registration-response'></a> -->
+<a id='registration-response' href='#registration-response'></a>
 <b>Example Response</b>:
-{: #registration-response }
+<!-- {: #registration-response } -->
 
 ``` json
 [
