@@ -1,4 +1,4 @@
-## IBM Environmental Intelligence Suite extension for Custom Geospatial Queries </h1>
+## IBM Environmental Intelligence Suite extension for Custom Geospatial Queries
 
 IBM Environmental Intelligence Suite combines the power of geospatial analytics, alerts and dashboards into a single, modernized user experience. Release 1.0 empowers our customers with basic support for visualizing results of a geospatial query and share their findings operationally through dashboard interactive map.
 
@@ -6,23 +6,23 @@ __Action__: Contact your IBM representative to get your IBM Environmental Intell
 
 ## Perform Data Exploration and Experimentation using IBM Environmental Intelligence Suite - Geospatial Analytics Component
 
- ### Identify Datasets
+### Identify Datasets
 
- Log into IBM Environmental Intelligence Suite (weatheroperationscenter.ibm.com), navigate to Geospatial Analytics using left-nav menu and use Data Explorer to search for relevant datasets.
+Log into IBM Environmental Intelligence Suite (weatheroperationscenter.ibm.com), navigate to Geospatial Analytics using left-nav menu and use Data Explorer to search for relevant datasets.
 
- ### Areas of Interest
+### Areas of Interest
 
- Draw a point/polygon, or look for an area of interest (like "Austin Texas" or "New South Wales"). Select relevant layers, etc and perform experimental queries.
+Draw a point/polygon, or look for an area of interest (like "Austin Texas" or "New South Wales"). Select relevant layers, etc and perform experimental queries.
 
- ![alt text](https://github.com/IBM/Environmental-Intelligence-Suite/blob/master/docs/resources/woc-geospatial-03.png?raw=true)
+![alt text](https://github.com/IBM/Environmental-Intelligence-Suite/blob/master/docs/resources/woc-geospatial-03.png?raw=true)
 
- ### Data Science Experiments
+### Data Science Experiments
 
- Optionally, create a new project in a data science environment (e.g, IBM Watson Studio), import your business assets and optionally, use one (or more) of the experimental queries from prior step to bring in data from PAIRS into your notebook. Do further experiments, feature selection, model construction/training, execution and persist output of model execution into a PAIRS data layer. Tutorials on how to construct and use geospatial queries are located here - https://pairs.res.ibm.com/tutorial/tutorials/api/index.html
+Optionally, create a new project in a data science environment (e.g, IBM Watson Studio), import your business assets and optionally, use one (or more) of the experimental queries from prior step to bring in data from PAIRS into your notebook. Do further experiments, feature selection, model construction/training, execution and persist output of model execution into a PAIRS data layer. Tutorials on how to construct and use geospatial queries are located here - https://pairs.res.ibm.com/tutorial/tutorials/api/index.html
 
 ### Visualization of data from EIS Geospatial Component (PAIRS)
 
- Once you have identified a specific layer in PAIRS that has the data for the time-interval of your interest, form a query similar to the example shown below, specifying your own `spatial:coordinates`, `temporal:intervals` and `layers:id`.  Subsequently, proceed to Day 0 below to operationalize it for viewing within Dashboard Visualization component of EIS.
+Once you have identified a specific layer in PAIRS that has the data for the time-interval of your interest, form a query similar to the example shown below, specifying your own `spatial:coordinates`, `temporal:intervals` and `layers:id`.  Subsequently, proceed to Day 0 below to operationalize it for viewing within Dashboard Visualization component of EIS.
 
 <a id='user-content-query-payload-1' href='#query-payload-1'></a>
 <b>Example geospatial `QUERY_PAYLOAD` that is ready to be operationalized </b>:
@@ -87,13 +87,30 @@ For example, *`registration-payload.json`*
 
 <a id="user-content-access-jwt-ex1" href="#access-jwt-ex1"></a>
 #### 1.2 Register the query
-| **Linux, macOS** | **PowerShell<sup>2,3,4</sup>** |
-|:-----------------|:-----------------------------|
-| <pre><code>curl -X POST "https://foundation.agtech.ibm.com/v2/layer/analytics/metadata" &#92;</code><br><code>  -H "accept: application/json" &#92;</code><br><code>  -H "Authorization: Bearer &lt;ACCESS_JWT&gt;" &#92;</code><br><code>  -H "Content-Type: application/json; charset=UTF-8" &#92;</code><br><code>  -d @registration-payload.json</code></pre> | <pre><code>curl.exe -X POST "https://foundation.agtech.ibm.com/v2/layer/analytics/metadata" &#96;</code><br><code>  -H "accept: application/json" &#96;</code><br><code>  -H "Authorization: Bearer &lt;ACCESS_JWT&gt;" &#96;</code><br><code>  -H "Content-Type: application/json; charset=UTF-8" &#96;</code><br><code>  -d @registration-payload.json</code></pre> |
+
+**Linux, macOS**
+``` shell
+curl -X POST "https://foundation.agtech.ibm.com/v2/layer/analytics/metadata" \
+  -H "accept: application/json" \
+  -H "Authorization: Bearer <ACCESS_JWT>" \
+  -H "Content-Type: application/json; charset=UTF-8" \
+  -d @registration-payload.json
+```
 * [*registration-payload.json*](#11-create-the-registration-payload)
 
-<a id='user-content-registration-response' href='#registration-response'></a>
+**PowerShell<sup>2,3,4</sup>**
+``` shell
+curl.exe -X POST "https://foundation.agtech.ibm.com/v2/layer/analytics/metadata" `
+  -H "accept: application/json" `
+  -H "Authorization: Bearer <ACCESS_JWT>" `
+  -H "Content-Type: application/json; charset=UTF-8" `
+  -d @registration-payload.json
+```
+* [*registration-payload.json*](#11-create-the-registration-payload)
+
+<!-- <a id='user-content-registration-response' href='#registration-response'></a> -->
 <b>Example Response</b>:
+{: #registration-response }
 
 ``` json
 [
@@ -133,10 +150,10 @@ For example, *`layer-config-block.json`*
         "COLOR_STEPS": [
           { "step": -1, "rgba": [ 0, 0, 8, 255 ] },
           { "step": 0, "rgba": [ 11, 0, 251, 255 ] },
-          { "step": .2, "rgba": [ 236, 0, 34, 255 ] },
-          { "step": .4, "rgba": [ 250, 93, 7, 255 ] },
-          { "step": .6, "rgba": [ 250, 249, 0, 255 ] },
-          { "step": .8, "rgba": [ 0, 239, 0, 255 ] },
+          { "step": 0.2, "rgba": [ 236, 0, 34, 255 ] },
+          { "step": 0.4, "rgba": [ 250, 93, 7, 255 ] },
+          { "step": 0.6, "rgba": [ 250, 249, 0, 255 ] },
+          { "step": 0.8, "rgba": [ 0, 239, 0, 255 ] },
           { "step": 1, "rgba": [ 1, 49, 1, 255 ] }
         ]
       },
@@ -149,20 +166,34 @@ For example, *`layer-config-block.json`*
   }}
 ```
 
-Before making the [sample request below](#add-the-layer):
+Before making the [sample request below](#user-content-add-the-layer):
 1. Modify the <b>`id`</b> to be something unique
 2. Set the desired <b>`displayName`</b>
-3. Substitute the correct <b>`dataAttributes.uuid`</b> using the `analyticsUuid` value from the [response above](#registration-response)
-4. Substitute `<ACCESS_JWT>` ([*Obtaining an Access Token*](./geospatial-api.md#obtaining-an-access-token)).
+3. Substitute the correct <b>`dataAttributes.uuid`</b> using the `analyticsUuid` value from the [response above](#user-content-registration-response)
+4. Substitute `<ACCESS_JWT>` ([*Obtaining an Access Token*](./geospatial-api.md#obtaining-an-access-token1)).
 
 Adjust `styleProperties:palette` and `unit` as appropriate. Contact your IBM representative or Expert Labs to discuss adjusting additional properties relevant to your specific geospatial analytics use-case.
 
 <a id='user-content-add-the-layer' href='#add-the-layer'></a>
 #### 2.2 Add Interactive Map (IMAP) custom layer
 <a id="user-content-access-jwt-ex2" href="#access-jwt-ex2"></a>
-| **Linux, macOS** | **PowerShell<sup>2,3,4</sup>** |
-|:-----------------|:-------------------------------|
-| <pre><code>curl -L -X PUT 'https://api.wsitrader.com/api/v1/IMAP/put-layer-config-block' &#92;</code><br><code>     -H "Authorization: Bearer &lt;ACCESS_JWT&gt;" &#92;</code><br><code>     -H "Content-Type: application/json" &#92;</code><br><code>     -d @layer-config-block.json</code></pre> | <pre><code>curl.exe -L -X PUT 'https://api.wsitrader.com/api/v1/IMAP/put-layer-config-block' &#96;</code><br><code>         -H "Authorization: Bearer &lt;ACCESS_JWT&gt;" &#96;</code><br><code>         -H "Content-Type: application/json" &#96;</code><br><code>         -d @layer-config-block.json</code></pre> |
+**Linux, macOS**
+
+``` shell
+curl -L -X PUT 'https://api.wsitrader.com/api/v1/IMAP/put-layer-config-block' \
+     -H "Authorization: Bearer <ACCESS_JWT>" \
+     -H "Content-Type: application/json" \
+     -d @layer-config-block.json
+```
+* [*layer-config-block.json*](#layer-config-block)
+
+**PowerShell<sup>2,3,4</sup>**
+``` shell
+curl.exe -L -X PUT 'https://api.wsitrader.com/api/v1/IMAP/put-layer-config-block' `
+         -H "Authorization: Bearer <ACCESS_JWT>" `
+         -H "Content-Type: application/json" `
+         -d @layer-config-block.json
+```
 * [*layer-config-block.json*](#layer-config-block)
 
 <b>Example response</b>:
@@ -228,9 +259,23 @@ Block Added.`
 
 #### 2. Submit the query and keep the query job id
 
-| **Linux, macOS** | **PowerShell<sup>2,3,4</sup>** |
-|:-----------------|:-------------------------------|
-| <pre><code>curl -L -X POST 'https://pairs.res.ibm.com/v2/query' &#92;</code><br><code>-H "Content-Type: application/json" &#92;</code><br><code>-H "Authorization: Bearer &lt;ACCESS_JWT&gt;" &#92;</code><br><code>-d @query-payload-temporal-update.json</code></pre>  | <pre><code>curl.exe -L -X POST 'https://pairs.res.ibm.com/v2/query' &#96;</code><br><code>-H "Content-Type: application/json" &#96;</code><br><code>-H "Authorization: Bearer &lt;ACCESS_JWT&gt;" &#96;</code><br><code>-d @query-payload-temporal-update.json</code></pre>  |
+**Linux, macOS**
+``` shell
+curl -L -X POST 'https://pairs.res.ibm.com/v2/query' \
+-H "Content-Type: application/json" \
+-H "Authorization: Bearer <ACCESS_JWT>" \
+-d @query-payload-temporal-update.json
+```
+* [*query-payload-temporal-update.json*](#query-payload-2)
+
+
+**PowerShell<sup>2,3,4</sup>**
+``` shell
+curl.exe -L -X POST 'https://pairs.res.ibm.com/v2/query' `
+-H "Content-Type: application/json" `
+-H "Authorization: Bearer <ACCESS_JWT>" `
+-d @query-payload-temporal-update.json
+```
 * [*query-payload-temporal-update.json*](#query-payload-2)
 
 <a id='user-content-query-to-merge-response' href='#query-to-merge-response'></a>
@@ -246,9 +291,17 @@ Block Added.`
 * [Query to merge `id` - `1607533200_04577287`](#query-to-merge-response)
 
 <a id="user-content-access-jwt-ex3" href="#access-jwt-ex3"></a><b>Merge Jobs</b>:
-| **Linux, macOS** | **PowerShell<sup>2,3,4</sup>** |
-|:-----------------|:-------------------------------|
-| <pre><code>curl -L -X PUT 'https://pairs.res.ibm.com/v2/queryjobs/1607533200_04490762/merge/1607533200_04577287' &#92;</code><br><code>-H "Authorization: Bearer &lt;YOUR API KEY&gt;"</code></pre> | <pre><code>curl.exe -L -X PUT 'https://pairs.res.ibm.com/v2/queryjobs/1607533200_04490762/merge/1607533200_04577287' &#96;</code><br><code>-H "Authorization: Bearer &lt;YOUR API KEY&gt;"</code></pre>  |
+**Linux, macOS**
+``` shell
+curl -L -X PUT 'https://pairs.res.ibm.com/v2/queryjobs/1607533200_04490762/merge/1607533200_04577287' \
+-H "Authorization: Bearer <YOUR API KEY>"
+```
+
+**PowerShell<sup>2,3,4</sup>**
+``` shell
+curl.exe -L -X PUT 'https://pairs.res.ibm.com/v2/queryjobs/1607533200_04490762/merge/1607533200_04577287' `
+-H "Authorization: Bearer <YOUR API KEY>"
+```
 
 As a consequence of the above operation, the output in Dashboard Visualization component would reflect computation from Sept 2020 (Day 1) rather than the original one from Aug 2020 (Day 0).
 
