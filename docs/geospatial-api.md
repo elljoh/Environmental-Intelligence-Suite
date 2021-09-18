@@ -50,13 +50,20 @@ An API endpoint is provided that accepts a JSON object and will return a JSON re
 - **Expected Data:** `{"apiKey":"xxxxxxxx", "clientId":"ibm-pairs"}`
 
 For example:
-
-``` shell
-curl --request POST \
-     --url https://auth-b2b-twc.ibm.com/auth/GetBearerForClient \
-     --header 'Content-Type: application/json' \
-     --data '{"apiKey":"xxxxxxxx", "clientId":"ibm-pairs"}'
-```
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: left"><strong>Linux, macOS</strong></th>
+      <th style="text-align: left"><strong>PowerShell<sup>2,3,4</sup></strong></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: left"><pre><code>curl -X POST &#92;</code><br><code>     --url https://auth-b2b-twc.ibm.com/auth/GetBearerForClient &#92;</code><br><code>     -H "Content-Type: application/json" &#92;</code><br><code>     -d '{"apiKey":"&lt;YOUR API KEY&gt;", "clientId":"ibm-pairs"}'</code></pre></td>
+      <td style="text-align: left"><pre><code>curl.exe -X POST &#96;</code><br><code>         --url https://auth-b2b-twc.ibm.com/auth/GetBearerForClient &#96;</code><br><code>         -H "Content-Type: application/json" &#96;</code><br><code>         -d '{&#92;"apiKey&#92;":&#92;"&lt;YOUR API KEY&gt;&#92;", &#92;"clientId&#92;":&#92;"ibm-pairs&#92;"}'</code></pre></td>
+    </tr>
+  </tbody>
+</table>
 
 The result of **POST** `/auth/GetBearerForClient` will produce:
 
