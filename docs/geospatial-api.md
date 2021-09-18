@@ -50,6 +50,21 @@ below provides details.
 |:-----------------|:-----------------------------|
 | <pre><code>curl -X POST &#92;</code><br><code>     --url https://auth-b2b-twc.ibm.com/auth/GetBearerForClient &#92;</code><br><code>     -H "Content-Type: application/json" &#92;</code><br><code>     -d '{"apiKey":"&lt;YOUR API KEY&gt;", "clientId":"ibm-pairs"}'</code></pre> |  <pre><code>curl.exe -X POST &#96;</code><br><code>         --url https://auth-b2b-twc.ibm.com/auth/GetBearerForClient &#96;</code><br><code>         -H "Content-Type: application/json" &#96;</code><br><code>         -d '{\\"apiKey\\":\\"&lt;YOUR API KEY&gt;\\", \\"clientId\\":\\"ibm-pairs\\"}'</code></pre> |
 
+
+**DRAFT-TEST**
+
+**PowerShell<sup>2,3,4</sup>**
+<pre lang="shell"><code>curl.exe -X POST &#96;</code><br><code>         --url https://auth-b2b-twc.ibm.com/auth/GetBearerForClient &#96;</code><br><code>         -H "Content-Type: application/json" &#96;</code><br><code>         -d '{&#92;"apiKey&#92;":&#92;"&lt;YOUR API KEY&gt;&#92;", &#92;"clientId&#92;":&#92;"ibm-pairs&#92;"}'</code></pre>
+
+``` powershell
+curl.exe -X POST `
+         --url https://auth-b2b-twc.ibm.com/auth/GetBearerForClient `
+         -H "Content-Type: application/json" `
+         -d '{\"apiKey\":\"<YOUR API KEY>\", \"clientId\":\"ibm-pairs\"}'
+```
+
+**EOF-DRAFT-TEST**
+
 The result of **POST** `/auth/GetBearerForClient` will produce:
 
 ``` json
