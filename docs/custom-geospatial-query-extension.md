@@ -51,7 +51,7 @@ Once you have identified a specific layer in PAIRS that has the data for the tim
 ### Generate JWT token
 
 Get an access token:
-1. Follow the steps in [Geospatial Analytics API - Obtaining an Access Token](./geospatial-api.md#obtaining-an-access-token) to obtain the token indicated by `<ACCESS_JWT>`
+1. Follow the steps in [Geospatial Analytics API - Obtaining an Access Token](./geospatial-api.md#obtaining-an-access-token1) to obtain the token indicated by `<ACCESS_JWT>`
 2. Copy the value corresponding to `<ACCESS_JWT>` from the step above to use in the [registration API call below](#12-register-the-query).
 
 ### Registration Part # 1 - Platform metadata
