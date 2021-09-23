@@ -8,7 +8,7 @@ __Action__: Contact your IBM representative to get your IBM Environmental Intell
 
 ### Identify Datasets
 
-Log into IBM Environmental Intelligence Suite (weatheroperationscenter.ibm.com), navigate to Geospatial Analytics using left-nav menu and use Data Explorer to search for relevant datasets.
+Log into IBM Environmental Intelligence Suite (https://environmentalintelligencesuite.ibm.com/), navigate to Geospatial Analytics using left-nav menu and use Data Explorer to search for relevant datasets.
 
 ### Areas of Interest
 
