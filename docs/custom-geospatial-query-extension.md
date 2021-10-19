@@ -178,7 +178,7 @@ Adjust `styleProperties:palette` and `unit` as appropriate. Contact your IBM rep
 **Linux, macOS**
 
 ``` shell
-curl -L -X PUT 'https://api.wsitrader.com/api/v1/IMAP/put-layer-config-block' \
+curl -L -X PUT 'https://api.auth-b2b-twc.ibm.com/api/v1/IMAP/put-layer-config-block' \
      -H "Authorization: Bearer <ACCESS_JWT>" \
      -H "Content-Type: application/json" \
      -d @layer-config-block.json
@@ -187,7 +187,7 @@ curl -L -X PUT 'https://api.wsitrader.com/api/v1/IMAP/put-layer-config-block' \
 
 **PowerShell<sup>2,3,4</sup>**
 ``` shell
-curl.exe -L -X PUT 'https://api.wsitrader.com/api/v1/IMAP/put-layer-config-block' `
+curl.exe -L -X PUT 'https://api.auth-b2b-twc.ibm.com/api/v1/IMAP/put-layer-config-block' `
          -H "Authorization: Bearer <ACCESS_JWT>" `
          -H "Content-Type: application/json" `
          -d @layer-config-block.json
