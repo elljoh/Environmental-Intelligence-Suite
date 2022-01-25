@@ -46,7 +46,7 @@ below provides details.
 ### Obtaining an Access Token<sup>1</sup>
 * **Tutorial examples where an access token is used**
     * See *`<ACCESS_JWT>`* in:
-        * [Registration Part # 1 - Platform metadata](./custom-geospatial-query-extension#access-jwt-ex1)
+        * [Registration Part # 1 - Platform metadata](./custom-geospatial-query-extension.md#access-jwt-ex1)
         * [Registration Part # 2 - Visualization metadata](./custom-geospatial-query-extension#access-jwt-ex2)
         * [Merge the new job with original `baseComputationId`](./custom-geospatial-query-extension#access-jwt-ex3)
 
